@@ -1,5 +1,13 @@
+---
+export interface Props {
+  className?: string
+}
+
+const { className = '' } = Astro.props as Props;
+---
+
 <h1
-  class="font-oswald text-2xl font-bold underline underline-offset-8 decoration-4 decoration-gray-500"
+  class={`font-oswald text-2xl font-bold underline underline-offset-8 decoration-4 decoration-gray-500 ${className}`}
 >
   <slot />
 </h1>

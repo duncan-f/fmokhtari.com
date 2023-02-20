@@ -1,5 +1,9 @@
 ---
+export interface Props {
+  className?: string;
+}
 
+const { className = '' } = Astro.props as Props;
 ---
 
-<p class="pt-5 text-justify"><slot /></p>
+<p class={`pt-5 text-justify ${className}`}><slot /></p>
