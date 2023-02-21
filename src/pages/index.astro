@@ -1,10 +1,21 @@
 ---
+import Header from "../components/Header.astro";
 import Heading from "../components/Heading.astro";
+import Main from "../components/Main.astro";
+import Navbar from "../components/Navbar.astro";
+import Paragraph from "../components/Paragraph.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout title={'Home'}>
-  <main role="main" class="mx-auto max-w-5xl">
-    <Heading>Astro</Heading>
-  </main>
+<Layout title={'SiteName'} description="Description">
+  <Header><Navbar /></Header>
+
+  <Main>
+    <Heading className={'pt-10'}>About me</Heading>
+    <Paragraph className={'indent-3'}>
+      I'm a Geophysics Engineer and a self-taught web developer passionate
+      about Cyber Security, Ethical Hacking and CTFs.
+    </Paragraph>
+  </Main>
+
 </Layout>

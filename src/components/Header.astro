@@ -1,0 +1,11 @@
+---
+export interface Props {
+  className?: string;
+}
+
+const { className = '' } = Astro.props as Props;
+---
+<header class={`w-full py-2 z-20 backdrop-opacity-30 ${className}`}>
+  <slot />
+</header>
+

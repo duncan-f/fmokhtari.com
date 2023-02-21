@@ -1,0 +1,14 @@
+---
+import Brand from "./Brand.astro";
+import NavbarLink from "./NavbarLink.astro";
+
+---
+
+<nav class="flex items-center justify-between mx-auto max-w-3xl px-10">
+  <Brand>Farouk Mokhtari</Brand>
+  <ul class="hidden md:flex items-center justify-center gap-6">
+    <NavbarLink href={'/'}>Home</NavbarLink>
+    <NavbarLink href="/projects">Projects</NavbarLink>
+    <NavbarLink href="/posts">Blog</NavbarLink>
+  </ul>
+</nav>
