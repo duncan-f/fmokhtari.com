@@ -1,13 +1,19 @@
 ---
+import Bio from "../components/Bio.astro";
+import Link from "../components/Link.astro";
 import Header from "../components/Header.astro";
 import Heading from "../components/Heading.astro";
 import Main from "../components/Main.astro";
 import Navbar from "../components/Navbar.astro";
 import Paragraph from "../components/Paragraph.astro";
 import Layout from "../layouts/Layout.astro";
+import ListItem from "../components/ListItem.astro";
+import List from "../components/List.astro";
+import Grid from "../components/Grid.astro";
+import GridItem from "../components/GridItem.astro";
 ---
 
-<Layout title={'SiteName'} description="Description">
+<Layout>
   <Header><Navbar /></Header>
 
   <Main>
@@ -16,6 +22,73 @@ import Layout from "../layouts/Layout.astro";
       I'm a Geophysics Engineer and a self-taught web developer passionate
       about Cyber Security, Ethical Hacking and CTFs.
     </Paragraph>
+
+    <Heading className={'pt-5'}>Education</Heading>
+    <Bio year={2020}>
+      Implementing and Administring Cisco Solutions [without Certification].
+    </Bio>
+    <Bio year={2017}>
+      Certificate of Completion, CISSP,
+      <Link href="https://www.mile2.com/">Mile2</Link>.
+    </Bio>
+    <Bio year={2012}>
+      State Engineer degree in Geophysics, Algeria,
+      <Link href="https://www.usthb.dz/">USTHB</Link>.
+    </Bio>
+
+    <Heading className={'pt-5'}>Technologies I use</Heading>
+    <Paragraph>Python, PHP, MySQL, Javascript, Laravel, Django</Paragraph>
+
+    <Heading className={'pt-5'}>Languages</Heading>
+    <Paragraph>Berberian, English, French, Arabic, Russian</Paragraph>
+
+    <Heading className={'pt-5'}>On the web</Heading>
+    <List>
+    <ListItem
+      className="mb-3"
+      icon="ic:round-mail"
+      href="mailto:fmokhtari@mail.ru"
+    >
+      fmokhtari@mail.ru
+    </ListItem>
+
+    <ListItem
+      className="my-3"
+      icon="mdi:github"
+      href="https://github.com/duncan-f"
+    >
+      duncan-f
+    </ListItem>
+    <ListItem
+      className="my-3"
+      icon="mdi:linkedin"
+      href="https://www.linkedin.com/in/farouk-mokhtari-560133188"
+    >
+      Farouk Mokhtari
+    </ListItem>
+    <ListItem
+      className="mt-3"
+      icon="mdi:twitter"
+      href="https://twitter.com/duncan12back"
+    >
+      @duncan12back
+    </ListItem>
+    </List>
+
+    <Grid>
+      <GridItem
+        src="https://picsum.photos/400/300"
+        title="duncan"
+      >
+        This is my description...
+      </GridItem>
+      <GridItem
+        src="https://picsum.photos/400/300"
+        title="duncan"
+      >
+        This is my description...
+      </GridItem>
+    </Grid>
   </Main>
 
 </Layout>

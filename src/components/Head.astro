@@ -1,18 +1,19 @@
 ---
 import '../styles/global.css';
+import { SITE_NAME, SITE_AUTHOR, SITE_DESCRIPTION } from '../config.js';
 
 export interface Props {
   author?: string;
-  image: string;
-  title: string;
-  description: string;
+  image?: string;
+  title?: string;
+  description?: string;
 }
 
 const {
-  author = 'Farouk Mokhtari',
+  author = SITE_AUTHOR,
   image = '/default/image.png',
-  title,
-  description
+  title = SITE_NAME,
+  description = SITE_DESCRIPTION
 } = Astro.props as Props;
 ---
 <head>
