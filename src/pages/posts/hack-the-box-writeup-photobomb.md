@@ -6,6 +6,7 @@ description:
   "This is a walkthrought for the Photobomb CTF on Hack The Box. It shows how
   easily we can exploit an Basic HTTP Authentication."
 tags: ["hackthebox", "ctfs"]
+layout: ../../layouts/Post.astro
 ---
 
 # Introduction

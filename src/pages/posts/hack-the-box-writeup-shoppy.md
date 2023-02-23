@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/Post.astro
 title: "Hack the Box - Writeup (Shoppy)"
 date: 2022-12-10T11:53:08+03:00
 author: farouk-mokhtari
@@ -56,7 +57,7 @@ gobuster -u http://shoppy.htb/ -w /usr/share/seclists/Discovery/Web-Content/dire
 
 ```
 
-{{< img src="/img/shoppy/gobuster.png" alt="GoBuster" class="img-fluid" >}}
+![GoBuster](/images/shoppy/gobuster.png)
 
 Now we notice there are two important pages **login** page and an **admin**
 section. On the login page there's a vulnerability using NoSQL injection, we use
@@ -64,15 +65,15 @@ section. On the login page there's a vulnerability using NoSQL injection, we use
 
 This will give us access to the admin panel :
 
-{{< img src="/img/shoppy/dashboard.png" title="Dashboard" alt="Dashboard" class="img-fluid" >}}
+![Dashboard](/images/shoppy/dashboard.png)
 
 Once again here we search with NoSQL injection :
 
-{{< img src="/img/shoppy/search.png" alt="Search" class="img-fluid" >}}
+![Search](/images/shoppy/search.png)
 
 We get a json file to download with all the users :
 
-{{< img src="/img/shoppy/download.png" alt="Download" class="img-fluid" >}}
+![Download](/images/shoppy/download.png)
 
 ```json
 [
@@ -92,7 +93,8 @@ We get a json file to download with all the users :
 We discover two users, **admin** and **josh**, with 2 hashes are _md5_. After
 cracking them using **john the ripper**.
 
-{{< quotes class="blockquote" body="**Note :** You can use **john the ripper** or **hashcat**, it doesn't matter, you'll get the same result." >}}
+> **Note :** You can use **john the ripper** or **hashcat**,
+> it doesn't matter, you'll get the same result.
 
 Both commands are like so :
 
@@ -120,7 +122,8 @@ enumeration. ffuf results are as follows :
 ffuf -w bitquark-subdomains-top100000.txt -v -u http://shoppy.htb/ -H "Host: FUZZ.shoppy.htb" -fs 169
 ```
 
-{{< quotes class="blockquote" body="**Note :** We add the **-fs** flag because we get a lot of pages with the same size and we want pages with different sizes." >}}
+> **Note :** We add the **-fs** flag because we get a lot of pages with the
+> same size and we want pages with different sizes.
 
 ```shell
         /'___\  /'___\           /'___\
@@ -156,17 +159,17 @@ ________________________________________________
 We discover a subdomain **mattermost** to add to the _hosts_ file. After
 accessing the sub we see this page :
 
-{{< img src="/img/shoppy/login.png" alt="MatterMost" class="img-fluid" >}}
+![MatterMost](/images/shoppy/login.png)
 
 Now, we can use the credentials we found for the user _josh_ on that subdomain.
 And in the development section on the website we find an interesting disscution
 between josh and what appears to be a sysadmin **jaeger**.
 
-{{< img src="/img/shoppy/sysadmin.png" alt="sysadmin" class="img-fluid" >}}
+![sysadmin](/images/shoppy/sysadmin.png)
 
 On the Deploy Machine channel we find some credentials for jaeger's account :
 
-{{< img src="/img/shoppy/jaeger.png" alt="Jaeger" class="img-fluid" >}}
+![Jaeger](/images/shoppy/jaeger.png)
 
 ```
 username: jaeger
@@ -191,7 +194,7 @@ xxd password-manager | less
 
 We scroll down the file and we find a section that gives the following :
 
-{{< img src="/img/shoppy/xdd.png" alt="xxd" class="img-fluid" >}}
+![xxd](/images/shoppy/xdd.png)
 
 The master password is **Sample**. Now after inserting the password, we got an
 access granted and the output of _creds.txt_ file.

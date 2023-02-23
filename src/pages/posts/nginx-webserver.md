@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/Post.astro
 title: "How to host a website with nginx"
 date: 2022-07-16T16:57:10+03:00
 author: farouk-mokhtari
@@ -37,11 +38,15 @@ You have to install **nginx** on your server, this is your webserver.
 
 - Debian / Ubuntu:
 
-{{< highlight shell >}} sudo apt install nginx {{< / highlight >}}
+```shell
+sudo apt install nginx
+```
 
 - Archlinux-based distributions:
 
-{{< highlight shell >}} sudo pacman -S nginx {{< / highlight >}}
+```shell
+sudo pacman -S nginx
+```
 
 And then to access your server remotly you need **openssh** which can be
 installed by this command.

@@ -1,4 +1,13 @@
-<footer>
-  <div><span>This is a footer</span></div>
-</footer>
+---
+import Link from "./Link.astro";
 
+const date = new Date().getFullYear();
+---
+
+<footer class="mx-auto max-w-2xl text-center py-5">
+  Copyright &copy; {date}
+  <Link href="mailto:fmokhtari@mail.ru">
+    Mokhtari Farouk
+  </Link>
+  ; All rights reserved.
+</footer>

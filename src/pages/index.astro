@@ -1,20 +1,33 @@
 ---
 import Bio from "../components/Bio.astro";
 import Link from "../components/Link.astro";
-import Header from "../components/Header.astro";
 import Heading from "../components/Heading.astro";
 import Main from "../components/Main.astro";
-import Navbar from "../components/Navbar.astro";
 import Paragraph from "../components/Paragraph.astro";
 import Layout from "../layouts/Layout.astro";
 import ListItem from "../components/ListItem.astro";
 import List from "../components/List.astro";
 import Grid from "../components/Grid.astro";
 import GridItem from "../components/GridItem.astro";
+import { Image } from "@astrojs/image/components";
 ---
 
 <Layout>
-  <Header><Navbar /></Header>
+  <div class="md:flex items-center justify-center text-center p-3 mb-6">
+    <div class="flex-shrink">
+      <h1 class="font-rubik font-bold text-4xl">Farouk Mokhtari</h1>
+      <p>Engineer, Web Developer, Bug Bounty Hunter (Trying to...)</p>
+    </div>
+    <div class="flex-shrink-0 md:ml-6 md:mt-5 text-center">
+      <Image
+        src="/images/duncan.png"
+        alt="Profile Picture"
+        width={128}
+        height={128}
+        class="border-2 border-stone-800 dark:border-stone-50 rounded-full inline-block"
+      />
+    </div>
+  </div>
 
   <Main>
     <Heading className={'pt-10'}>About me</Heading>
@@ -77,16 +90,10 @@ import GridItem from "../components/GridItem.astro";
 
     <Grid>
       <GridItem
-        src="https://picsum.photos/400/300"
-        title="duncan"
+        src="/images/youtube.png"
+        title="dunCan"
       >
-        This is my description...
-      </GridItem>
-      <GridItem
-        src="https://picsum.photos/400/300"
-        title="duncan"
-      >
-        This is my description...
+        This is my YouTube channel, where I share my knowledge in technology.
       </GridItem>
     </Grid>
   </Main>

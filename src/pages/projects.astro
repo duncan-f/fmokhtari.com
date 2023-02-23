@@ -1,16 +1,12 @@
 ---
-import Header from "../components/Header.astro";
 import Heading from "../components/Heading.astro";
 import Main from "../components/Main.astro";
-import Navbar from "../components/Navbar.astro";
 import Layout from "../layouts/Layout.astro";
 
 const projects = await Astro.glob('../pages/projects/*.{md,mdx}');
 ---
 
 <Layout title={'Projects'} description="Here you can find all my projects">
-  <Header><Navbar /></Header>
-
   <Main>
     <Heading className={'pt-10'}>Projects</Heading>
     <ul class="list-disc list-inside">
