@@ -1,13 +1,16 @@
 ---
+import { dateFormat } from '../utils';
+import Badge from '../components/Badge.astro';
 import Body from '../components/Body.astro';
 import Content from '../components/Content.astro';
 import Footer from '../components/Footer.astro';
 import Head from '../components/Head.astro';
 import Header from '../components/Header.astro';
 import Navbar from '../components/Navbar.astro';
+import { Icon } from 'astro-icon';
 
 const { frontmatter } = Astro.props;
-const { title, description } = frontmatter;
+const { title, description, author, date, draft } = frontmatter;
 ---
 <html lang="en">
   <Head {title} {description} />
@@ -16,6 +19,18 @@ const { title, description } = frontmatter;
       <Navbar />
     </Header>
 
+    <h1 class="font-bold font-rubik text-center text-5xl my-3">{title}</h1>
+    <div class="flex items-center justify-center text-center gap-2">
+      <span class="inline-flex items-center gap-2 text-lg">
+        <Icon name="tabler:user" width="16" height="16" />
+        {author}
+        <Icon name="tabler:calendar" width="16" height="16" />
+        {dateFormat(date)}
+      </span>
+      { draft && (
+      <Badge>DRAFT</Badge>
+      ) }
+    </div>
     <Content className="prose dark:prose-invert prose-headings:font-rubik prose-a:underline-offset-2 hover:prose-a:text-emerald-500 prose-a:decoration-emerald-500 prose-img:border prose-img:border-slate-300 dark:prose-img:border-zinc-700 prose-img:rounded-xl">
 		  <slot />
     </Content>
