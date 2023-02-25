@@ -1,0 +1,62 @@
+---
+import { Icon } from "astro-icon";
+import { formatPosts } from "../../utils";
+import { getCollection, CollectionEntry } from "astro:content";
+import Header from "../../components/Header.astro";
+import Article from "../../components/Article.astro";
+import Layout from "../../layouts/Layout.astro";
+import Link from "../../components/Link.astro";
+import { Image } from "@astrojs/image/components";
+import Badge from "../../components/Badge.astro";
+
+export async function getStaticPaths() {
+  const projects = await getCollection('projects');
+  const formatedPosts = formatPosts(projects);
+
+  return formatedPosts.map((project: any) => ({
+      params: { slug: project.slug, },
+      props: { project }
+  }))
+}
+
+interface Props {
+  project: CollectionEntry<"projects">;
+}
+
+const { project } = Astro.props;
+const { title, description, website, image, date, stack } = project.data;
+const { Content } = await project.render();
+---
+
+<Layout {title} {description}>
+  <Header className="text-center">
+    <h1 class="font-bold font-rubik text-5xl">
+      {title}
+      <Badge>{date}</Badge>
+    </h1>
+    <div class="md:flex items-center justify-center my-4 gap-6">
+    <span class="inline-flex items-center">
+      <Icon name="tabler:world" class="mb-1" width="20" height="20" />
+      <div class="ml-1">
+        <Link href={website}>{website}</Link>
+      </div>
+    </span>
+    <span class="inline-flex items-center">
+      <Icon name="tabler:stack" class="mb-1" width="20" height="20" />
+      {stack.join(', ')}
+    </span>
+    </div>
+  </Header>
+
+  <Article className="prose dark:prose-invert prose-headings:font-rubik prose-a:underline-offset-2 hover:prose-a:text-emerald-500 prose-a:decoration-emerald-500 prose-img:border prose-img:border-slate-300 dark:prose-img:border-zinc-700 prose-img:rounded-xl">
+    <Content />
+  </Article>
+  <Image
+    src={image}
+    alt={title}
+    width={600}
+    height={300}
+    class="mx-auto rounded-xl border border-gray-500 dark:border-gray-50"
+  />
+</Layout>
+

@@ -1,12 +1,18 @@
 ---
-layout: ../../layouts/Post.astro
 title: "Hack the Box - Writeup (Shoppy)"
 date: 2022-12-10T11:53:08+03:00
-author: farouk-mokhtari
-description: "This is a walkthrought for the Shoppy CTF on Hack The Box. It
-consists of searching for the credentials on the webapp, and then find our way
+author: {
+	name: "Farouk Mokhtari",
+	email: "fmokhtari@mail.ru",
+	website: "https://duncan-f.github.io",
+	btc: "1JJmuidSTRCugnBKH8H7bDxEmTtAAg4kyn",
+	usdt: "TWi6yNRhxzkmgZhhoriDzWgvrSsxbdQCb8",
+	xmr: "87Asjp2TLCkKnw3PYsiKaTDwL8mNhiL7uV67ptCtVxqbSnaZfATQ6t4d1mfWnKu4kB4ieQHMApGhUdUY3h4RKBS2Kuc5RyW"
+}
+description: "This box consists of searching for the credentials on the webapp, and then find our way
 up to escalate our priviledges for root access to the machine."
 tags: ["hackthebox", "ctfs"]
+category: "Writeup"
 ---
 
 ## Introduction

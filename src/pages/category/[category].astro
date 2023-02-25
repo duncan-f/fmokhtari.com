@@ -1,0 +1,78 @@
+---
+import { Icon } from "astro-icon";
+import { getCollection, CollectionEntry } from "astro:content";
+import Heading from "../../components/Heading.astro";
+import Main from "../../components/Main.astro";
+import Badge from "../../components/Badge.astro";
+import Link from "../../components/Link.astro";
+
+// component imports
+import Layout from "../../layouts/Layout.astro";
+
+// utils
+import { slugify, formatPosts } from "../../utils";
+
+export async function getStaticPaths() {
+  return [
+    {
+      params: { category: slugify("Tutorial") },
+      props: { name: "Tutorial" },
+    },
+    {
+      params: { category: slugify("General") },
+      props: { name: "General" },
+    },
+    {
+      params: { category: slugify("Writeup") },
+      props: { name: "Writeup" },
+    },
+  ];
+}
+
+const { category } = Astro.params;
+const { name } = Astro.props;
+
+const posts = await getCollection("posts");
+const formattedPosts: CollectionEntry<"posts">[] = formatPosts(posts);
+const catPosts = formattedPosts.filter(
+  (post) => slugify(post.data.category) === category
+);
+---
+
+<Layout title={name} description={`Posts about ${name}`}>
+  <Main>
+    <Heading className={'pt-10'}>
+      Posts about
+      <span class="text-emerald-500">
+        {name}
+      </span>
+    </Heading>
+    {
+      catPosts.map((post) => (
+      <div class="pt-5">
+        <h2 class="font-rubik font-bold text-lg">
+          {post.data.title}
+          {post.data.draft && (
+            <Badge>DRAFT</Badge>
+          )}
+        </h2>
+        <div class="md:flex items-center pt-2 gap-4">
+        <div class="inline-flex items-center gap-1">
+          <Icon name="tabler:user" class="mb-1" width="16" height="16" />
+          <Link href={`/authors/${slugify(post.data.author.name)}`}>
+            {post.data.author.name}
+          </Link>
+        </div>
+        <div class="inline-flex items-center gap-1">
+          <Icon name="tabler:calendar" class="mb-1" width="16" height="16" />
+          {post.data.date}
+        </div>
+        </div>
+        <p class="my-2 text-justify">{post.data.description}</p>
+        <Link href={`/posts/${post.slug}`}>Read more...</Link>
+      </div>
+      ))
+    }
+  </Main>
+</Layout>
+

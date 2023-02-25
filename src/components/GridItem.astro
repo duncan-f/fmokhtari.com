@@ -3,24 +3,26 @@ import { Image } from "@astrojs/image/components";
 
 export interface Props {
   src: string;
+  href: string;
   title: string;
 }
 
-const { src, title } = Astro.props as Props;
+const { src, href, title } = Astro.props as Props;
 ---
 
+<a {href}>
 <div class="w-full">
   <Image
     {src}
     alt={title}
     width={400}
-    height={300}
+    height={200}
     class="border-2 border-slate-300 rounded-lg"
   />
 
   <div class="text-center">
-    <h4 class="text-lg">{title}</h4>
+    <h4 class="font-bold text-lg mt-2">{title}</h4>
     <p><slot /></p>
   </div>
 </div>
-
+</a>

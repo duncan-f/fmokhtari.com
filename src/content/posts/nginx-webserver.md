@@ -1,12 +1,19 @@
 ---
-layout: ../../layouts/Post.astro
 title: "How to host a website with nginx"
 date: 2022-07-16T16:57:10+03:00
-author: farouk-mokhtari
+author: {
+	name: "Farouk Mokhtari",
+	email: "fmokhtari@mail.ru",
+	website: "https://duncan-f.github.io",
+	btc: "1JJmuidSTRCugnBKH8H7bDxEmTtAAg4kyn",
+	usdt: "TWi6yNRhxzkmgZhhoriDzWgvrSsxbdQCb8",
+	xmr: "87Asjp2TLCkKnw3PYsiKaTDwL8mNhiL7uV67ptCtVxqbSnaZfATQ6t4d1mfWnKu4kB4ieQHMApGhUdUY3h4RKBS2Kuc5RyW"
+}
 description:
   "This is tutorial is going to help you setup a webserver accessible remotly
   from the internet."
 tags: ["server", "nginx", "linux"]
+category: "Tutorial"
 draft: true
 ---
 

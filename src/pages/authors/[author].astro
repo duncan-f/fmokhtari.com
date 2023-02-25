@@ -1,0 +1,96 @@
+---
+import { Icon } from "astro-icon";
+import { getCollection, CollectionEntry } from "astro:content";
+
+// component imports
+import Layout from "../../layouts/Layout.astro";
+import Badge from "../../components/Badge.astro";
+import Main from "../../components/Main.astro";
+import Heading from "../../components/Heading.astro";
+import Link from "../../components/Link.astro";
+
+// utils
+import { slugify, formatPosts } from "../../utils";
+
+export async function getStaticPaths() {
+  const allPosts = await getCollection("posts");
+  const formattedPosts: CollectionEntry<"posts">[] = formatPosts(allPosts);
+  const allAuthors = [
+    ...new Set(formattedPosts.map((post) => post.data.author).flat()),
+  ];
+  return allAuthors.map((author) => {
+    const authorPosts = formattedPosts.filter(
+      (post) => post.data.author.name === author.name
+    );
+    return {
+      params: { author: slugify(author.name) },
+      props: {
+        authorName: author.name,
+        posts: authorPosts,
+      },
+    };
+  });
+}
+
+interface Props {
+  posts: CollectionEntry<"posts">[];
+  authorName: string;
+};
+
+const { author } = Astro.params;
+const { posts, authorName } = Astro.props;
+---
+
+<Layout title={authorName}>
+  <Main>
+    <Heading className={'pt-10'}>
+      Posts by
+      <span class="text-emerald-500">
+        {authorName}
+      </span>
+    </Heading>
+    {
+      posts.map((post) => (
+      <div class="pt-5">
+        <h2 class="font-rubik font-bold text-lg">
+          {post.data.title}
+          {post.data.draft && (
+            <Badge>DRAFT</Badge>
+          )}
+        </h2>
+        <div class="md:flex items-center pt-2 gap-4">
+        <div class="inline-flex items-center gap-1">
+          <Icon name="tabler:calendar" class="mb-1" width="16" height="16" />
+          {post.data.date}
+        </div>
+        <div class="inline-flex items-center">
+          <Link href={`/category/${slugify(post.data.category)}`}>
+            {post.data.category}
+          </Link>
+        </div>
+        </div>
+        <p class="my-2 text-justify">{post.data.description}</p>
+        <Link href={`/posts/${post.slug}`}>Read more...</Link>
+      </div>
+      ))
+    }
+
+    <Heading className={'pt-5'}>About the author</Heading>
+    <ul class="mx-auto max-w-2xl list-disc list-inside">
+      {author.website &&
+        <li>
+          <Link href={author.website}>{authorName}</Link>
+        </li>
+      }
+      {author.email &&
+        <li>
+          <Link href={`mailto:${author.email}`}>{author.email}</Link>
+        </li>
+      }
+      {author.btc && (<li>btc: <small>{author.btc}</small></li>)}
+      {author.usdt && (<li>usdt: <small>{author.usdt}</small></li>)}
+      {author.xmr && (<li>xmr: <small>{author.xmr}</small></li>)}
+    </ul>
+  </Main>
+</Layout>
+

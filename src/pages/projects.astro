@@ -1,19 +1,30 @@
 ---
+import { formatPosts } from "../utils";
+import { getCollection, CollectionEntry } from "astro:content";
 import Heading from "../components/Heading.astro";
 import Main from "../components/Main.astro";
 import Layout from "../layouts/Layout.astro";
+import Grid from "../components/Grid.astro";
+import GridItem from "../components/GridItem.astro";
 
-const projects = await Astro.glob('../pages/projects/*.{md,mdx}');
+const projects = await getCollection("projects");
+const formated: CollectionEntry<"projects">[] = formatPosts(projects);
 ---
 
 <Layout title={'Projects'} description="Here you can find all my projects">
   <Main>
     <Heading className={'pt-10'}>Projects</Heading>
-    <ul class="list-disc list-inside">
-      { projects.map((project) => (
-      <li><a href={project.url}>{project.frontmatter.title}</a></li>
+    <Grid>
+      { formated.map((project) => (
+      <GridItem
+        title={project.data.title}
+        src={project.data.image}
+        href={`/projects/${project.slug}`}
+      >
+        {project.data.description}
+      </GridItem>
       ))}
-    </ul>
+    </Grid>
   </Main>
 
 </Layout>
