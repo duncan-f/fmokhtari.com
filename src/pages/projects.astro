@@ -11,7 +11,10 @@ const projects = await getCollection("projects");
 const formated: CollectionEntry<"projects">[] = formatContent(projects);
 ---
 
-<Layout title={'Projects'} description="Here you can find all my projects">
+<Layout
+  title={'My Projects'}
+  description="Here you can find all my projects"
+>
   <Main>
     <Heading className={'pt-10'}>Projects</Heading>
     <Grid>

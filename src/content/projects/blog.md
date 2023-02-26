@@ -5,7 +5,7 @@ description:
   technology."
 website: "https://duncan-f.github.io/"
 stack: ["Hugo", "HTML", "CSS", "Javascript"]
-image: '../../../public/images/projects/blog.png'
+image: '/images/projects/blog.png'
 date: 2022-07-16
 ---
 

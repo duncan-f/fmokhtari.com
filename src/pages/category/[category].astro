@@ -12,21 +12,27 @@ import Link from "../../components/Link.astro";
 import { slugify, formatContent } from "../../utils";
 
 const { category } = Astro.params;
-const { name } = Astro.props;
 
 const posts = await getCollection("posts");
 const formattedPosts: CollectionEntry<"posts">[] = formatContent(posts);
+
+const allCategories = [
+  ...new Set(formattedPosts.map((post) => post.data.category).flat()),
+];
+
+const cat = allCategories.filter((item) => slugify(item) === category);
+
 const catPosts = formattedPosts.filter(
   (post) => slugify(post.data.category) === category
 );
 ---
 
-<Layout title={`Posts about ${name}`} description={`Posts about ${name}`}>
+<Layout title={`Posts about ${cat}`} description={`Posts about ${cat}`}>
   <Main>
     <Heading className={'pt-10'}>
       Posts about
       <span class="text-emerald-500">
-        {name}
+        {cat}
       </span>
     </Heading>
     {
