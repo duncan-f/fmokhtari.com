@@ -18,7 +18,7 @@ export function dateFormat(date: string) {
   });
 }
 
-export function formatPosts(posts: string, {
+export function formatContent(posts: string, {
   filterOutFuturePosts = true,
   sortByDate = true,
   limit = undefined,

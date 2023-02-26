@@ -1,6 +1,6 @@
 ---
 import { Icon } from "astro-icon";
-import { formatPosts } from "../../utils";
+import { formatContent } from "../../utils";
 import { getCollection, CollectionEntry } from "astro:content";
 import Header from "../../components/Header.astro";
 import Article from "../../components/Article.astro";
@@ -11,9 +11,9 @@ import Badge from "../../components/Badge.astro";
 
 export async function getStaticPaths() {
   const projects = await getCollection('projects');
-  const formatedPosts = formatPosts(projects);
+  const formatted = formatContent(projects);
 
-  return formatedPosts.map((project: any) => ({
+  return formatted.map((project: any) => ({
       params: { slug: project.slug, },
       props: { project }
   }))

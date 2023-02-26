@@ -1,5 +1,5 @@
 ---
-import { formatPosts } from "../utils";
+import { formatContent } from "../utils";
 import { getCollection, CollectionEntry } from "astro:content";
 import Heading from "../components/Heading.astro";
 import Main from "../components/Main.astro";
@@ -8,7 +8,7 @@ import Grid from "../components/Grid.astro";
 import GridItem from "../components/GridItem.astro";
 
 const projects = await getCollection("projects");
-const formated: CollectionEntry<"projects">[] = formatPosts(projects);
+const formated: CollectionEntry<"projects">[] = formatContent(projects);
 ---
 
 <Layout title={'Projects'} description="Here you can find all my projects">

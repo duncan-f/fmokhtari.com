@@ -1,6 +1,6 @@
 ---
 import { Icon } from "astro-icon";
-import { slugify, formatPosts } from "../../utils";
+import { slugify, formatContent } from "../../utils";
 import { getCollection, CollectionEntry } from "astro:content";
 import Badge from "../../components/Badge.astro";
 import Header from "../../components/Header.astro";
@@ -9,8 +9,8 @@ import Layout from "../../layouts/Layout.astro";
 import Link from "../../components/Link.astro";
 
 export async function getStaticPaths() {
-  const posts = await getCollection('posts');
-  const formatedPosts = formatPosts(posts);
+  const allPosts = await getCollection('posts');
+  const formatedPosts = formatContent(allPosts);
 
   return formatedPosts.map((post: any) => ({
       params: { slug: post.slug, },
@@ -34,7 +34,7 @@ const { Content } = await post.render();
     <span class="inline-flex items-center">
       <Icon name="tabler:user" width="20" height="20" />
       <div class="ml-1">
-        <Link href={`/authors/${slugify(author.name)}`}>{author.name}</Link>
+        <Link href={`/author/${slugify(author.name)}`}>{author.name}</Link>
       </div>
     </span>
     <span class="inline-flex items-center">
@@ -43,7 +43,7 @@ const { Content } = await post.render();
     </span>
     <span class="inline-flex items-center">
       <Icon name="tabler:tags" width="20" height="20" />
-      {tags.map((tag: string) =>
+      {tags.map((tag: any) =>
         <div class="inline-flex ml-2">#{tag}</div>
       )}
     </span>

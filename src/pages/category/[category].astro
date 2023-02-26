@@ -10,7 +10,7 @@ import Link from "../../components/Link.astro";
 import Layout from "../../layouts/Layout.astro";
 
 // utils
-import { slugify, formatPosts } from "../../utils";
+import { slugify, formatContent } from "../../utils";
 
 export async function getStaticPaths() {
   return [
@@ -33,7 +33,7 @@ const { category } = Astro.params;
 const { name } = Astro.props;
 
 const posts = await getCollection("posts");
-const formattedPosts: CollectionEntry<"posts">[] = formatPosts(posts);
+const formattedPosts: CollectionEntry<"posts">[] = formatContent(posts);
 const catPosts = formattedPosts.filter(
   (post) => slugify(post.data.category) === category
 );
@@ -48,7 +48,7 @@ const catPosts = formattedPosts.filter(
       </span>
     </Heading>
     {
-      catPosts.map((post) => (
+      catPosts.map((post: any) => (
       <div class="pt-5">
         <h2 class="font-rubik font-bold text-lg">
           {post.data.title}
@@ -59,7 +59,7 @@ const catPosts = formattedPosts.filter(
         <div class="md:flex items-center pt-2 gap-4">
         <div class="inline-flex items-center gap-1">
           <Icon name="tabler:user" class="mb-1" width="16" height="16" />
-          <Link href={`/authors/${slugify(post.data.author.name)}`}>
+          <Link href={`/author/${slugify(post.data.author.name)}`}>
             {post.data.author.name}
           </Link>
         </div>

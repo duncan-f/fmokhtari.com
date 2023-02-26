@@ -1,5 +1,5 @@
 ---
-import { slugify, formatPosts } from "../utils";
+import { slugify, formatContent } from "../utils";
 import { CollectionEntry, getCollection } from 'astro:content';
 import Badge from "../components/Badge.astro";
 import Heading from "../components/Heading.astro";
@@ -9,7 +9,7 @@ import Layout from "../layouts/Layout.astro";
 import { Icon } from "astro-icon";
 
 const posts = await getCollection("posts");
-const formatedPosts: CollectionEntry<"posts">[] = formatPosts(posts, {
+const formatedPosts: CollectionEntry<"posts">[] = formatContent(posts, {
   limit: 3
 });
 ---
@@ -31,7 +31,7 @@ const formatedPosts: CollectionEntry<"posts">[] = formatPosts(posts, {
         <div class="md:flex items-center pt-2 gap-4">
         <div class="inline-flex items-center gap-1">
           <Icon name="tabler:user" class="mb-1" width="16" height="16" />
-          <Link href={`/authors/${slugify(post.data.author.name)}`}>
+          <Link href={`/author/${slugify(post.data.author.name)}`}>
             {post.data.author.name}
           </Link>
         </div>
