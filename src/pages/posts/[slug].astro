@@ -16,20 +16,22 @@ const { Content } = await entry.render();
 
 <Layout {title} {description}>
   <Header className="text-center">
-    <h1 class="font-bold font-rubik text-5xl">{title}</h1>
-    <div class="md:flex items-center justify-center my-4 gap-6">
+    <h1 class="font-bold font-rubik text-2xl md:text-5xl">{title}</h1>
+    <div
+      class="md:flex items-center justify-center my-4 gap-6 text-sm md:text-md"
+    >
     <span class="inline-flex items-center">
-      <Icon name="tabler:user" class="mb-1" width="20" height="20" />
+      <Icon name="tabler:user" width="20" height="20" />
       <div class="ml-1">
         <Link href={`/author/${slugify(author.name)}`}>{author.name}</Link>
       </div>
     </span>
     <span class="inline-flex items-center">
-      <Icon name="tabler:calendar" class="mb-1" width="20" height="20" />
+      <Icon name="tabler:calendar" width="20" height="20" />
       <div class="ml-1">{date}</div>
     </span>
     <span class="inline-flex items-center">
-      <Icon name="tabler:tags" class="mb-1" width="20" height="20" />
+      <Icon name="tabler:tags" width="20" height="20" />
       {tags.map((tag: any) =>
         <div class="inline-flex ml-2">#{tag}</div>
       )}

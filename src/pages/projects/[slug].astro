@@ -16,11 +16,11 @@ const { title, description, date, website, stack, image } = entry.data;
 
 <Layout {title} {description}>
   <Header className="text-center">
-    <h1 class="font-bold font-rubik text-5xl">
+    <h1 class="font-bold font-rubik text-2xl md:text-5xl text-center">
       {title}
       <Badge>{date}</Badge>
     </h1>
-    <div class="md:flex items-center justify-center my-4 gap-6">
+    <div class="md:flex md:items-center md:justify-center my-4 gap-6">
     <span class="inline-flex items-center">
       <Icon name="tabler:world" class="mb-1" width="20" height="20" />
       <div class="ml-1">
@@ -37,6 +37,7 @@ const { title, description, date, website, stack, image } = entry.data;
   <Article className="prose dark:prose-invert prose-headings:font-rubik prose-a:underline-offset-2 hover:prose-a:text-emerald-500 prose-a:decoration-emerald-500 prose-img:border prose-img:border-slate-300 dark:prose-img:border-zinc-700 prose-img:rounded-xl">
     <Content />
   </Article>
+  <div class="px-5">
   <Image
     src={image}
     alt={title}
@@ -44,5 +45,6 @@ const { title, description, date, website, stack, image } = entry.data;
     height={300}
     class="mx-auto rounded-xl border border-gray-500 dark:border-gray-50"
   />
+  </div>
 </Layout>
 
