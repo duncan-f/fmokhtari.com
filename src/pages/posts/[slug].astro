@@ -1,6 +1,6 @@
 ---
 import { Icon } from "astro-icon";
-import { slugify } from "../../utils";
+import { slugify, dateFormat } from "../../utils";
 import { getEntryBySlug } from "astro:content";
 import Badge from "../../components/Badge.astro";
 import Header from "../../components/Header.astro";
@@ -28,7 +28,7 @@ const { Content } = await entry.render();
     </span>
     <span class="inline-flex items-center">
       <Icon name="tabler:calendar" width="20" height="20" />
-      <div class="ml-1">{date}</div>
+      <div class="ml-1">{dateFormat(date)}</div>
     </span>
     <span class="inline-flex items-center">
       <Icon name="tabler:tags" width="20" height="20" />

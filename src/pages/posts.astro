@@ -1,5 +1,5 @@
 ---
-import { slugify, formatContent } from "../utils";
+import { slugify, formatContent, dateFormat } from "../utils";
 import { CollectionEntry, getCollection } from 'astro:content';
 import Badge from "../components/Badge.astro";
 import Heading from "../components/Heading.astro";
@@ -37,7 +37,7 @@ const formatedPosts: CollectionEntry<"posts">[] = formatContent(posts, {
         </div>
         <div class="inline-flex items-center gap-1">
           <Icon name="tabler:calendar" width="16" height="16" />
-          {post.data.date}
+          {dateFormat(post.data.date)}
         </div>
         <div class="inline-flex items-center">
           <Link href={`/category/${slugify(post.data.category)}`}>

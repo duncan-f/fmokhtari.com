@@ -10,7 +10,7 @@ import Heading from "../../components/Heading.astro";
 import Link from "../../components/Link.astro";
 
 // utils
-import { slugify, formatContent } from "../../utils";
+import { slugify, formatContent, dateFormat } from "../../utils";
 
 const { author } = Astro.params;
 
@@ -56,7 +56,7 @@ const authorPosts = formattedPosts.filter(
         <div class="md:flex items-center pt-2 gap-4">
         <div class="inline-flex items-center gap-1">
           <Icon name="tabler:calendar" class="mb-1" width="16" height="16" />
-          {post.data.date}
+          {dateFormat(post.data.date)}
         </div>
         <div class="inline-flex items-center">
           <Link href={`/category/${slugify(post.data.category)}`}>
@@ -71,20 +71,37 @@ const authorPosts = formattedPosts.filter(
     }
 
     <Heading className={'pt-5'}>About the author</Heading>
-    <ul class="mx-auto max-w-2xl list-disc list-inside my-4">
+    <ul class="mx-auto max-w-2xl my-4">
       {authorObj[0].website &&
-        <li>
-          <Link href={authorObj[0].website}>{authorObj[0].name}</Link>
+        <li class="inline-flex gap-1">
+          <Icon name="tabler:world" width="20" height="20" />
+          <Link href={authorObj[0].website}>{authorObj[0].website}</Link>
         </li>
       }
       {authorObj[0].email &&
-        <li>
+        <li class="inline-flex gap-1">
+          <Icon name="tabler:mail" width="20" height="20" />
           <Link href={`mailto:${authorObj[0].email}`}>{authorObj[0].email}</Link>
         </li>
       }
-      {authorObj[0].btc && (<li>btc: <small>{authorObj[0].btc}</small></li>)}
-      {authorObj[0].usdt && (<li>usdt: <small>{authorObj[0].usdt}</small></li>)}
-      {authorObj[0].xmr && (<li>xmr: <small>{authorObj[0].xmr}</small></li>)}
+      {authorObj[0].btc &&
+        <li class="inline-flex gap-1">
+          <Icon name="btc" width="20" height="20" />
+          <small class="break-all">{authorObj[0].btc}</small>
+        </li>
+      }
+      {authorObj[0].usdt &&
+        <li class="inline-flex gap-1">
+          <Icon name="usdt" width="20" height="20" />
+          <small class="break-all">{authorObj[0].usdt}</small>
+        </li>
+      }
+      {authorObj[0].xmr &&
+        <li class="inline-flex gap-1">
+          <Icon name="xmr" width="20" height="20" />
+          <small class="break-all">{authorObj[0].xmr}</small>
+        </li>
+      }
     </ul>
   </Main>
 </Layout>
