@@ -1,7 +1,6 @@
 ---
 import { Icon } from "astro-icon";
-import { formatContent } from "../../utils";
-import { getCollection, CollectionEntry } from "astro:content";
+import { getEntryBySlug } from "astro:content";
 import Header from "../../components/Header.astro";
 import Article from "../../components/Article.astro";
 import Layout from "../../layouts/Layout.astro";
@@ -9,23 +8,10 @@ import Link from "../../components/Link.astro";
 import { Image } from "@astrojs/image/components";
 import Badge from "../../components/Badge.astro";
 
-export async function getStaticPaths() {
-  const projects = await getCollection('projects');
-  const formatted = formatContent(projects);
-
-  return formatted.map((project: any) => ({
-      params: { slug: project.slug, },
-      props: { project }
-  }))
-}
-
-interface Props {
-  project: CollectionEntry<"projects">;
-}
-
-const { project } = Astro.props;
-const { title, description, website, image, date, stack } = project.data;
-const { Content } = await project.render();
+const { slug } = Astro.params;
+const entry = await getEntryBySlug('projects', slug);
+const { Content } = await entry.render();
+const { title, description, date, website, stack, image } = entry.data;
 ---
 
 <Layout {title} {description}>

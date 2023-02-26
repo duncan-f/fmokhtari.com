@@ -17,6 +17,6 @@ export default defineConfig({
   markdown: {
     drafts: false
   },
-  output: "server",
+  output: 'server',
   adapter: netlify()
 });

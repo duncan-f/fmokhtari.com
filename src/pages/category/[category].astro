@@ -11,23 +11,6 @@ import Link from "../../components/Link.astro";
 // utils
 import { slugify, formatContent } from "../../utils";
 
-export async function getStaticPaths() {
-  return [
-    {
-      params: { category: slugify("Tutorial") },
-      props: { name: "Tutorial" },
-    },
-    {
-      params: { category: slugify("General") },
-      props: { name: "General" },
-    },
-    {
-      params: { category: slugify("Writeup") },
-      props: { name: "Writeup" },
-    },
-  ];
-}
-
 const { category } = Astro.params;
 const { name } = Astro.props;
 
@@ -38,7 +21,7 @@ const catPosts = formattedPosts.filter(
 );
 ---
 
-<Layout title={name} description={`Posts about ${name}`}>
+<Layout title={`Posts about ${name}`} description={`Posts about ${name}`}>
   <Main>
     <Heading className={'pt-10'}>
       Posts about

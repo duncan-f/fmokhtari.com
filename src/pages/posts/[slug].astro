@@ -1,30 +1,17 @@
 ---
 import { Icon } from "astro-icon";
-import { slugify, formatContent } from "../../utils";
-import { getCollection, CollectionEntry } from "astro:content";
+import { slugify } from "../../utils";
+import { getEntryBySlug } from "astro:content";
 import Badge from "../../components/Badge.astro";
 import Header from "../../components/Header.astro";
 import Article from "../../components/Article.astro";
 import Layout from "../../layouts/Layout.astro";
 import Link from "../../components/Link.astro";
 
-export async function getStaticPaths() {
-  const allPosts = await getCollection('posts');
-  const formatted = formatContent(allPosts);
-
-  return formatted.map((post: any) => ({
-      params: { slug: post.slug, },
-      props: { post }
-  }))
-}
-
-interface Props {
-  post: CollectionEntry<"posts">;
-}
-
-const { post } = Astro.props;
-const { title, description, date, author, draft, tags } = post.data;
-const { Content } = await post.render();
+const { slug } = Astro.params;
+const entry = await getEntryBySlug('posts', slug);
+const { title, description, date, author, draft, tags } = entry.data;
+const { Content } = await entry.render();
 ---
 
 <Layout {title} {description}>
@@ -47,7 +34,7 @@ const { Content } = await post.render();
         <div class="inline-flex ml-2">#{tag}</div>
       )}
     </span>
-    <span class="inline-flex mb-6">
+    <span class="inline-flex absolute">
       { draft && (
       <Badge>DRAFT</Badge>
       ) }

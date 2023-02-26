@@ -6,7 +6,7 @@ description:
 
 website: "https://mokhtari.netlify.app/"
 stack: ["Chakra UI", "ReactJS", "NextJS", "Javascript"]
-image: ../../../public/images/projects/portfolio.png
+image: "../../../public/images/projects/portfolio.png"
 date: 2023-01-03
 ---
 

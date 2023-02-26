@@ -12,45 +12,25 @@ import Link from "../../components/Link.astro";
 // utils
 import { slugify, formatContent } from "../../utils";
 
-export async function getStaticPaths() {
-  const allPosts = await getCollection("posts");
-  const formatted: CollectionEntry<"posts">[] = formatContent(allPosts);
-  const allAuthors = [
-    ...new Set(formatted.map((post) => post.data.author).flat()),
-  ];
-  return allAuthors.map((author) => {
-    const authorPosts = formatted.filter(
-      (post) => post.data.author.name === author.name
-    );
-    return {
-      params: { author: slugify(author.name) },
-      props: {
-        authorName: author.name,
-        posts: authorPosts,
-      },
-    };
-  });
-}
-
-interface Props {
-  posts: CollectionEntry<"posts">[];
-  authorName: string;
-};
-
 const { author } = Astro.params;
-const { posts, authorName } = Astro.props;
+
+const allPosts = await getCollection("posts");
+const formattedPosts: CollectionEntry<"posts">[] = formatContent(allPosts);
+const authorPosts = formattedPosts.filter(
+  (post) => slugify(post.data.author.name) === author
+);
 ---
 
-<Layout title={authorName}>
+<Layout title={'Posts by authorName'} description={'Posts by authorName'}>
   <Main>
     <Heading className={'pt-10'}>
       Posts by
       <span class="text-emerald-500">
-        {authorName}
+        {'authorName'}
       </span>
     </Heading>
     {
-      posts.map((post) => (
+      authorPosts.map((post) => (
       <div class="pt-5">
         <h2 class="font-rubik font-bold text-lg">
           {post.data.title}

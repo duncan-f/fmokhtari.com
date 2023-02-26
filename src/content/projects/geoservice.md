@@ -4,7 +4,7 @@ description:
   "This is a website I created for a company that operates in geoscience."
 website: "https://sboulila.netlify.app/"
 stack: ["Astro", "ReactJS", "Javascript"]
-image: ../../../public/images/projects/geoservices.png
+image: "../../../public/images/projects/geoservices.png"
 date: 2023-01-03
 ---
 
