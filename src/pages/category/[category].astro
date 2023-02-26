@@ -1,13 +1,12 @@
 ---
+// component imports
 import { Icon } from "astro-icon";
 import { getCollection, CollectionEntry } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
 import Heading from "../../components/Heading.astro";
 import Main from "../../components/Main.astro";
 import Badge from "../../components/Badge.astro";
 import Link from "../../components/Link.astro";
-
-// component imports
-import Layout from "../../layouts/Layout.astro";
 
 // utils
 import { slugify, formatContent } from "../../utils";
@@ -48,7 +47,7 @@ const catPosts = formattedPosts.filter(
       </span>
     </Heading>
     {
-      catPosts.map((post: any) => (
+      catPosts.map((post) => (
       <div class="pt-5">
         <h2 class="font-rubik font-bold text-lg">
           {post.data.title}

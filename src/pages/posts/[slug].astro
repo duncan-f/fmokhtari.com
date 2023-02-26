@@ -10,9 +10,9 @@ import Link from "../../components/Link.astro";
 
 export async function getStaticPaths() {
   const allPosts = await getCollection('posts');
-  const formatedPosts = formatContent(allPosts);
+  const formatted = formatContent(allPosts);
 
-  return formatedPosts.map((post: any) => ({
+  return formatted.map((post: any) => ({
       params: { slug: post.slug, },
       props: { post }
   }))
@@ -32,22 +32,22 @@ const { Content } = await post.render();
     <h1 class="font-bold font-rubik text-5xl">{title}</h1>
     <div class="md:flex items-center justify-center my-4 gap-6">
     <span class="inline-flex items-center">
-      <Icon name="tabler:user" width="20" height="20" />
+      <Icon name="tabler:user" class="mb-1" width="20" height="20" />
       <div class="ml-1">
         <Link href={`/author/${slugify(author.name)}`}>{author.name}</Link>
       </div>
     </span>
     <span class="inline-flex items-center">
-      <Icon name="tabler:calendar" width="20" height="20" />
+      <Icon name="tabler:calendar" class="mb-1" width="20" height="20" />
       <div class="ml-1">{date}</div>
     </span>
     <span class="inline-flex items-center">
-      <Icon name="tabler:tags" width="20" height="20" />
+      <Icon name="tabler:tags" class="mb-1" width="20" height="20" />
       {tags.map((tag: any) =>
         <div class="inline-flex ml-2">#{tag}</div>
       )}
     </span>
-    <span class="inline-flex">
+    <span class="inline-flex mb-6">
       { draft && (
       <Badge>DRAFT</Badge>
       ) }

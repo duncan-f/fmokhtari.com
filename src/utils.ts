@@ -9,7 +9,7 @@ export function slugify(str: string) {
     .replace(/-+$/g, '');
 }
 
-export function dateFormat(date: string) {
+export function dateFormat(date: any) {
   return new Date(date).toLocaleDateString('en-us', {
     timeZone: "UTC",
     year: "numeric",
@@ -18,7 +18,7 @@ export function dateFormat(date: string) {
   });
 }
 
-export function formatContent(posts: string, {
+export function formatContent(posts: any, {
   filterOutFuturePosts = true,
   sortByDate = true,
   limit = undefined,

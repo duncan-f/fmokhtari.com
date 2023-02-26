@@ -14,12 +14,12 @@ import { slugify, formatContent } from "../../utils";
 
 export async function getStaticPaths() {
   const allPosts = await getCollection("posts");
-  const formattedPosts: CollectionEntry<"posts">[] = formatContent(allPosts);
+  const formatted: CollectionEntry<"posts">[] = formatContent(allPosts);
   const allAuthors = [
-    ...new Set(formattedPosts.map((post) => post.data.author).flat()),
+    ...new Set(formatted.map((post) => post.data.author).flat()),
   ];
   return allAuthors.map((author) => {
-    const authorPosts = formattedPosts.filter(
+    const authorPosts = formatted.filter(
       (post) => post.data.author.name === author.name
     );
     return {
@@ -50,7 +50,7 @@ const { posts, authorName } = Astro.props;
       </span>
     </Heading>
     {
-      posts.map((post: any) => (
+      posts.map((post) => (
       <div class="pt-5">
         <h2 class="font-rubik font-bold text-lg">
           {post.data.title}

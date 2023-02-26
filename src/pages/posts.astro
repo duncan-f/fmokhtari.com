@@ -20,7 +20,7 @@ const formatedPosts: CollectionEntry<"posts">[] = formatContent(posts, {
 >
   <Main>
     <Heading className={'pt-10'}>All Posts</Heading>
-      { formatedPosts.map((post) => (
+      { formatedPosts.map((post: any) => (
       <div class="pt-5">
         <h2 class="font-rubik font-bold text-lg">
           {post.data.title}
