@@ -10,7 +10,7 @@ import netlify from "@astrojs/netlify/functions";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://fmokhtari.com/",
+  //site: "https://fmokhtari.com/",
   integrations: [tailwind(), image({
     serviceEntryPoint: '@astrojs/image/sharp'
   }), react()],
