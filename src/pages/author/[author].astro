@@ -40,7 +40,7 @@ const authorPosts = formattedPosts.filter(
   <Main>
     <Heading className={'pt-10'}>
       Posts by
-      <span class="text-emerald-500">
+      <span class="text-orange-500">
         {authorObj[0].name}
       </span>
     </Heading>
@@ -99,7 +99,7 @@ const authorPosts = formattedPosts.filter(
       {authorObj[0].xmr &&
         <li class="inline-flex gap-1">
           <Icon name="xmr" width="20" height="20" />
-          <small class="break-all">{authorObj[0].xmr}</small>
+          <small class="text-xs break-all">{authorObj[0].xmr}</small>
         </li>
       }
     </ul>
