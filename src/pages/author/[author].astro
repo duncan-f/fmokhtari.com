@@ -3,14 +3,14 @@ import { Icon } from "astro-icon";
 import { getCollection, CollectionEntry } from "astro:content";
 
 // component imports
-import Layout from "../../layouts/Layout.astro";
-import Badge from "../../components/Badge.astro";
-import Main from "../../components/Main.astro";
-import Heading from "../../components/Heading.astro";
-import Link from "../../components/Link.astro";
+import Layout from "@layouts/Layout.astro";
+import Badge from "@components/Badge.astro";
+import Main from "@components/Main.astro";
+import Heading from "@components/Heading.astro";
+import Link from "@components/Link.astro";
 
 // utils
-import { slugify, formatContent, dateFormat } from "../../utils";
+import { slugify, formatContent, dateFormat } from "@/utils";
 
 const { author } = Astro.params;
 
@@ -96,10 +96,16 @@ const authorPosts = formattedPosts.filter(
           <small class="break-all">{authorObj[0].usdt}</small>
         </li>
       }
+      {authorObj[0].eth &&
+        <li class="inline-flex gap-1">
+          <Icon name="eth" width="20" height="20" />
+          <small class="break-all">{authorObj[0].eth}</small>
+        </li>
+      }
       {authorObj[0].xmr &&
         <li class="inline-flex gap-1">
           <Icon name="xmr" width="20" height="20" />
-          <small class="text-xs break-all">{authorObj[0].xmr}</small>
+          <small class="max-w-xs">{authorObj[0].xmr}</small>
         </li>
       }
     </ul>

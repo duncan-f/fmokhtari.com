@@ -4,7 +4,7 @@ import { dateFormat } from '../utils';
 const postsCollection = defineCollection({
   schema: z.object({
     author: z.object({
-      name: z.string(),
+      name: z.enum(["Farouk Mokhtari"]),
       email: z.string().email().optional(),
       website: z.string().url().optional(),
       btc: z.string().optional(),
