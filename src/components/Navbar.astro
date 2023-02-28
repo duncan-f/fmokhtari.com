@@ -1,5 +1,5 @@
 ---
-import { SITE_NAME } from "../config";
+import { SITE_NAME } from "@/config";
 import Brand from "@components/Brand.astro";
 import NavbarLink from "@components/NavbarLink.astro";
 import ThemeToggle from "@components/ThemeToggle";
@@ -9,7 +9,8 @@ import Hamburger from "@components/Hamburger";
 
 <nav class="flex items-center justify-between mx-auto max-w-3xl px-10">
   <Brand>{SITE_NAME}</Brand>
-  <ul class="hidden md:flex items-center justify-center gap-6">
+  <div class="flex-1"></div>
+  <ul class="hidden md:flex md:items-end md:justify-end gap-6">
     <NavbarLink href="/projects">Projects</NavbarLink>
     <NavbarLink href="/posts">Blog</NavbarLink>
   </ul>

@@ -22,7 +22,7 @@ const formatedPosts: CollectionEntry<"posts">[] = formatContent(posts, {
     <Heading className={'pt-10'}>All Posts</Heading>
       { formatedPosts.map((post: any) => (
       <div class="pt-5">
-        <h2 class="font-rubik font-bold text-lg">
+        <h2 class="font-rubik font-bold text-xl">
           {post.data.title}
           {post.data.draft && (
             <Badge>DRAFT</Badge>
@@ -39,7 +39,7 @@ const formatedPosts: CollectionEntry<"posts">[] = formatContent(posts, {
           <Icon name="tabler:calendar" width="16" height="16" />
           {dateFormat(post.data.date)}
         </div>
-        <div class="inline-flex items-center">
+        <div class="inline-flex items-center gap-1">
           <Link href={`/category/${slugify(post.data.category)}`}>
             {post.data.category}
           </Link>
