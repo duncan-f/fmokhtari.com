@@ -15,18 +15,17 @@ const { Content } = await entry.render();
 
 <Layout {title} {description}>
   <div class="pt-20 text-center">
-    <h1 class="relative font-bold font-rubik text-4xl md:text-5xl">
+    <h1 class="font-bold font-rubik text-4xl md:text-5xl">
       {title}
-
-      <span class="absolute inline-flex">
+    </h1>
+    <div
+      class="flex flex-col md:flex-row md:items-center md:justify-center mx-10 my-4 gap-2 md:gap-6"
+    >
+    <span class="inline-flex items-center">
       { draft && (
         <Badge>DRAFT</Badge>
       )}
-      </span>
-    </h1>
-    <div
-      class="md:flex items-center justify-center my-4 gap-6 text-sm md:text-md"
-    >
+    </span>
     <span class="inline-flex items-center">
       <Icon name="tabler:user" width="20" height="20" />
       <div class="ml-1">
