@@ -28,18 +28,18 @@ const formatedPosts: CollectionEntry<"posts">[] = formatContent(posts, {
             <Badge>DRAFT</Badge>
           )}
         </h2>
-        <div class="md:flex md:items-center text-center pt-2 gap-4">
-        <div class="inline-flex items-center gap-1">
+        <div class="md:flex md:items-center pt-2 gap-4">
+        <div class="inline-flex">
           <Icon name="tabler:user" width="16" height="16" />
           <Link href={`/author/${slugify(post.data.author.name)}`}>
             {post.data.author.name}
           </Link>
         </div>
-        <div class="inline-flex items-center gap-1">
+        <div class="inline-flex">
           <Icon name="tabler:calendar" width="16" height="16" />
           {dateFormat(post.data.date)}
         </div>
-        <div class="inline-flex items-center gap-1">
+        <div>
           <Link href={`/category/${slugify(post.data.category)}`}>
             {post.data.category}
           </Link>

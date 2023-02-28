@@ -19,14 +19,14 @@ const { title, description, date, website, stack, image } = entry.data;
       {title}
     </h1>
     <div class="flex flex-col md:flex-row md:items-center md:justify-center mx-10 my-4 gap-2 md:gap-6">
-    <span class="inline-flex items-center">
+    <span class="inline-flex">
       <Badge>{date}</Badge>
     </span>
-    <span class="inline-flex items-center">
+    <span class="inline-flex">
       <Icon name="tabler:world" width="20" height="20" />
       <Link href={website}>{website}</Link>
     </span>
-    <span class="inline-flex items-center">
+    <span class="inline-flex">
       <Icon name="tabler:stack" width="20" height="20" />
       {stack.join(', ')}
     </span>
