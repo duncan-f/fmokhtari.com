@@ -39,6 +39,7 @@ export default function ThemeToggle() {
   return isMounted ? (
     <button
       type="button"
+      aria-label="Toggle theme"
       className="mx-2 inline-flex items-center justify-center w-[40px] h-[40px] rounded-lg dark:bg-orange-400 text-white bg-gray-600"
       onClick={toggleTheme}
     >
