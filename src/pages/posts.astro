@@ -19,7 +19,7 @@ const formatedPosts: CollectionEntry<"posts">[] = formatContent(posts, {
   description="This is where I share my knowledge of technology"
 >
   <Main>
-    <Heading className={'pt-10'}>All Posts</Heading>
+    <Heading className={'md:pt-10 pt-20'}>All Posts</Heading>
       { formatedPosts.map((post: any) => (
       <div class="pt-5">
         <h2 class="font-rubik font-bold text-xl">
@@ -28,18 +28,19 @@ const formatedPosts: CollectionEntry<"posts">[] = formatContent(posts, {
             <Badge>DRAFT</Badge>
           )}
         </h2>
-        <div class="md:flex md:items-center pt-2 gap-4">
-        <div class="inline-flex">
-          <Icon name="tabler:user" width="16" height="16" />
+        <div class="flex flex-col items-start justify-start md:flex-row md:gap-2 pt-2">
+        <div class="inline-flex gap-1">
+          <Icon name="tabler:user" width="20" height="20" />
           <Link href={`/author/${slugify(post.data.author.name)}`}>
             {post.data.author.name}
           </Link>
         </div>
-        <div class="inline-flex">
-          <Icon name="tabler:calendar" width="16" height="16" />
+        <div class="inline-flex gap-1">
+          <Icon name="tabler:calendar" width="20" height="20" />
           {dateFormat(post.data.date)}
         </div>
         <div>
+          Category:
           <Link href={`/category/${slugify(post.data.category)}`}>
             {post.data.category}
           </Link>

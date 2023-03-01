@@ -29,7 +29,7 @@ const catPosts = formattedPosts.filter(
 
 <Layout title={`Posts about ${cat}`} description={`Posts about ${cat}`}>
   <Main>
-    <Heading className={'pt-10'}>
+    <Heading className={'md:pt-10 pt-20'}>
       Posts about
       <span class="text-orange-500">
         {cat}
@@ -44,15 +44,15 @@ const catPosts = formattedPosts.filter(
             <Badge>DRAFT</Badge>
           )}
         </h2>
-        <div class="md:flex items-center pt-2 gap-4">
-        <div class="inline-flex items-center gap-1">
-          <Icon name="tabler:user" class="mb-1" width="16" height="16" />
+        <div class="flex items-center pt-2 gap-4">
+        <div class="inline-flex gap-1">
+          <Icon name="tabler:user" width="20" height="20" />
           <Link href={`/author/${slugify(post.data.author.name)}`}>
             {post.data.author.name}
           </Link>
         </div>
-        <div class="inline-flex items-center gap-1">
-          <Icon name="tabler:calendar" class="mb-1" width="16" height="16" />
+        <div class="inline-flex gap-1">
+          <Icon name="tabler:calendar" width="20" height="20" />
           {dateFormat(post.data.date)}
         </div>
         </div>

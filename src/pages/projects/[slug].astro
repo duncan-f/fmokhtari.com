@@ -22,11 +22,11 @@ const { title, description, date, website, stack, image } = entry.data;
     <span class="inline-flex">
       <Badge>{date}</Badge>
     </span>
-    <span class="inline-flex">
+    <span class="inline-flex gap-1">
       <Icon name="tabler:world" width="20" height="20" />
       <Link href={website}>{website}</Link>
     </span>
-    <span class="inline-flex">
+    <span class="inline-flex gap-1">
       <Icon name="tabler:stack" width="20" height="20" />
       {stack.join(', ')}
     </span>

@@ -14,6 +14,11 @@ export default defineConfig({
   integrations: [tailwind(), image({
     serviceEntryPoint: '@astrojs/image/sharp'
   }), react()],
+  vite: {
+    ssr: {
+      external: ["svgo"]
+    }
+  },
   output: 'server',
   adapter: netlify()
 });

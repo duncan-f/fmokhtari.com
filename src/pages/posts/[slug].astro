@@ -26,18 +26,18 @@ const { Content } = await entry.render();
         <Badge>DRAFT</Badge>
       )}
     </span>
-    <span class="inline-flex">
+    <span class="inline-flex gap-1">
       <Icon name="tabler:user" width="20" height="20" />
         <Link href={`/author/${slugify(author.name)}`}>{author.name}</Link>
     </span>
-    <span class="inline-flex">
+    <span class="inline-flex gap-1">
       <Icon name="tabler:calendar" width="20" height="20" />
       {dateFormat(date)}
     </span>
-    <span class="inline-flex">
+    <span class="inline-flex gap-1">
       <Icon name="tabler:tags" width="20" height="20" />
       {tags.map((tag: any) =>
-        <div class="inline-flex ml-1">#{tag}</div>
+        <div class="inline-flex">#{tag}</div>
       )}
     </span>
     </div>
