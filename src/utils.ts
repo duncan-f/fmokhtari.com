@@ -20,12 +20,16 @@ export function dateFormat(date: Date) {
 
 export function formatContent(posts: any, {
   filterOutFuturePosts = true,
+  filterOutDrafts = true,
   sortByDate = true,
   limit = undefined,
 } = {}) {
 
   const filteredPosts = posts.reduce((acc: any, post: any) => {
-    const { date } = post.data;
+    const { date, draft } = post.data;
+    // filterOutDrafts if true
+    if (filterOutDrafts && draft && !import.meta.env.DEV) return acc;
+
     // filterOutFuturePosts if true
     if (filterOutFuturePosts && new Date(date) > new Date()) return acc;
 
