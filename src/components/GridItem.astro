@@ -10,7 +10,7 @@ export interface Props {
 const { src, href, title } = Astro.props as Props;
 ---
 
-<a {href}>
+<a {href} aria-label={title}>
 <div class="w-full">
   <Image
     {src}
@@ -21,7 +21,7 @@ const { src, href, title } = Astro.props as Props;
   />
 
   <div class="text-center">
-    <h4 class="font-bold text-md mt-2">{title}</h4>
+    <h2 class="font-bold text-md mt-2">{title}</h2>
     <p><slot /></p>
   </div>
 </div>

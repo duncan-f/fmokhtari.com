@@ -45,6 +45,7 @@ const projectsCollection = defineCollection({
                              .toLocaleDateString('en-us', {
                                timeZone: "UTC", year: "numeric"
                              })),
+    category: z.enum(["My Projects", "Collaborations", "Old Projects"])
   }),
 });
 

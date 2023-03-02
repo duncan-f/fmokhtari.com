@@ -8,6 +8,7 @@ website: "https://mokhtari.netlify.app/"
 stack: ["Chakra UI", "ReactJS", "NextJS", "Javascript"]
 image: "/images/projects/portfolio.png"
 date: 2023-01-03
+category: My Projects
 ---
 
 This is the current website. Since I'm learing ReactJS Stack, I just wanted to

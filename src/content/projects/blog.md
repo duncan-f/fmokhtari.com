@@ -7,6 +7,7 @@ website: "https://duncan-f.github.io/"
 stack: ["Hugo", "HTML", "CSS", "Javascript"]
 image: '/images/projects/blog.png'
 date: 2022-07-16
+category: My Projects
 ---
 
 This website is my blog, and it is a project that I've tried and powered by

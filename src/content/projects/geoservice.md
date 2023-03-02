@@ -6,6 +6,7 @@ website: "https://sboulila.netlify.app/"
 stack: ["Astro", "ReactJS", "Javascript"]
 image: "/images/projects/geoservices.png"
 date: 2023-01-03
+category: Collaborations
 ---
 
 This website was created with [Astro](https://astro.build/), combined with
