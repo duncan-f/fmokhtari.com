@@ -27,13 +27,20 @@ import { Icon } from "astro-icon";
         alt="Profile Picture"
         width={100}
         height={100}
-        format="avif"
+        format="webp"
         class="border-2 border-stone-800 dark:border-stone-50 rounded-full inline-block"
       />
     </div>
   </div>
 
-  <div class="flex items-center justify-center">
+  <Main>
+    <Heading>About me</Heading>
+    <Paragraph className={'indent-3'}>
+      I'm a Geophysics Engineer and a self-taught web developer passionate
+      about Cyber Security, Ethical Hacking and CTFs.
+    </Paragraph>
+
+  <div class="flex items-center justify-center mt-4">
   <a
     aria-label="My Portfolio"
     href="/projects"
@@ -47,13 +54,6 @@ import { Icon } from "astro-icon";
     />
   </a>
   </div>
-
-  <Main>
-    <Heading>About me</Heading>
-    <Paragraph className={'indent-3'}>
-      I'm a Geophysics Engineer and a self-taught web developer passionate
-      about Cyber Security, Ethical Hacking and CTFs.
-    </Paragraph>
 
     <Heading className={'pt-5'}>Education</Heading>
     <Bio year={2020}>
