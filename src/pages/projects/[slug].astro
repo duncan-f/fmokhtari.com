@@ -5,7 +5,6 @@ import { Image } from "@astrojs/image/components";
 import Article from "@components/Article.astro";
 import Layout from "@layouts/Layout.astro";
 import Link from "@components/Link.astro";
-import Badge from "@components/Badge.astro";
 
 const { slug } = Astro.params;
 const entry = await getEntryBySlug('projects', slug);
@@ -14,13 +13,14 @@ const { title, description, date, website, stack, image } = entry.data;
 ---
 
 <Layout {title} {description}>
-  <div class="pt-20 text-center">
+  <div class="pt-20 mx-auto max-w-3xl">
     <h1 class="font-bold font-rubik text-4xl md:text-5xl text-center">
       {title}
     </h1>
-    <div class="flex flex-col md:flex-row md:items-center md:justify-center mx-10 my-4 gap-2 md:gap-6">
-    <span class="inline-flex">
-      <Badge>{date}</Badge>
+    <div class="flex flex-col items-start justify-start mx-10 my-4 gap-2">
+    <span class="inline-flex gap-1">
+      <Icon name="tabler:keyboard" width="20" height="20" />
+      {date}
     </span>
     <span class="inline-flex gap-1">
       <Icon name="tabler:world" width="20" height="20" />
