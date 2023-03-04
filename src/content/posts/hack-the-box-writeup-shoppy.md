@@ -1,20 +1,21 @@
 ---
-title: "Hack the Box - Writeup (Shoppy)"
-date: 2022-12-10T11:53:08+03:00
-author: {
-	name: "Farouk Mokhtari",
-	email: "fmokhtari@mail.ru",
-	website: "https://duncan-f.github.io",
-	btc: "1JJmuidSTRCugnBKH8H7bDxEmTtAAg4kyn",
-	usdt: "TWi6yNRhxzkmgZhhoriDzWgvrSsxbdQCb8",
-	xmr: "87Asjp2TLCkKnw3PYsiKaTDwL8mNhiL7uV67ptCtVxqbSnaZfATQ6t4d1mfWnKu4kB4ieQHMApGhUdUY3h4RKBS2Kuc5RyW"
-}
-description: "This box consists of searching for the credentials on the webapp, and then find our way
-up to escalate our priviledges for root access to the machine."
-tags: ["hackthebox", "ctfs"]
-category: "Writeup"
+title: Hack the Box - Writeup (Shoppy)
+description: This box consists of searching for the credentials on the webapp,
+  and then find our way up to escalate our priviledges for root access to the
+  machine.
+category: Writeup
+author:
+  name: Farouk Mokhtari
+  email: fmokhtari@mail.ru
+  website: https://fmokhtari.com
+  btc: 1JJmuidSTRCugnBKH8H7bDxEmTtAAg4kyn
+  usdt: TWi6yNRhxzkmgZhhoriDzWgvrSsxbdQCb8
+  xmr: 87Asjp2TLCkKnw3PYsiKaTDwL8mNhiL7uV67ptCtVxqbSnaZfATQ6t4d1mfWnKu4kB4ieQHMApGhUdUY3h4RKBS2Kuc5RyW
+tags:
+  - hackthebox
+  - ctfs
+date: 2022-12-10T08:53:17.813Z
 ---
-
 ## Introduction
 
 Hello everybody, this machine (Shoppy) from Hack The Box is an easy one. It

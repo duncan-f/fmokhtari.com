@@ -1,21 +1,20 @@
 ---
-title: "Hack the Box - Writeup (Photobomb)"
-date: 2022-12-12T09:30:13+03:00
-author: {
-	name: "Farouk Mokhtari",
-	email: "fmokhtari@mail.ru",
-	website: "https://duncan-f.github.io",
-	btc: "1JJmuidSTRCugnBKH8H7bDxEmTtAAg4kyn",
-	usdt: "TWi6yNRhxzkmgZhhoriDzWgvrSsxbdQCb8",
-	xmr: "87Asjp2TLCkKnw3PYsiKaTDwL8mNhiL7uV67ptCtVxqbSnaZfATQ6t4d1mfWnKu4kB4ieQHMApGhUdUY3h4RKBS2Kuc5RyW"
-}
-description:
-  "This is a walkthrought for the Photobomb CTF on Hack The Box. It shows how
-  easily we can exploit an Basic HTTP Authentication."
-tags: ["hackthebox", "ctfs"]
-category: "Writeup"
+title: Hack the Box - Writeup (Photobomb)
+description: This is a walkthrought for the Photobomb CTF on Hack The Box. It
+  shows how easily we can exploit an Basic HTTP Authentication.
+category: Writeup
+author:
+  name: Farouk Mokhtari
+  email: fmokhtari@mail.ru
+  website: https://fmokhtari.com
+  btc: 1JJmuidSTRCugnBKH8H7bDxEmTtAAg4kyn
+  usdt: TWi6yNRhxzkmgZhhoriDzWgvrSsxbdQCb8
+  xmr: 87Asjp2TLCkKnw3PYsiKaTDwL8mNhiL7uV67ptCtVxqbSnaZfATQ6t4d1mfWnKu4kB4ieQHMApGhUdUY3h4RKBS2Kuc5RyW
+tags:
+  - hackthebox
+  - ctfs
+date: 2022-12-12T06:30:49.237Z
 ---
-
 # Introduction
 
 This machine is an easy machine that demonstrates how you can easily exploit a

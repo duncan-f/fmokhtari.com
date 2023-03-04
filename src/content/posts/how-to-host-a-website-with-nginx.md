@@ -1,23 +1,23 @@
 ---
-title: "How to host a website with nginx"
-date: 2022-07-16T16:57:10+03:00
-author: {
-	name: "Farouk Mokhtari",
-	email: "fmokhtari@mail.ru",
-	website: "https://duncan-f.github.io",
-	btc: "1JJmuidSTRCugnBKH8H7bDxEmTtAAg4kyn",
-	usdt: "TWi6yNRhxzkmgZhhoriDzWgvrSsxbdQCb8",
-	xmr: "87Asjp2TLCkKnw3PYsiKaTDwL8mNhiL7uV67ptCtVxqbSnaZfATQ6t4d1mfWnKu4kB4ieQHMApGhUdUY3h4RKBS2Kuc5RyW"
-}
-description:
-  "This is tutorial is going to help you setup a webserver accessible remotly
-  from the internet."
-tags: ["server", "nginx", "linux"]
-category: "Tutorial"
+title: How to host a website with nginx
+description: This is tutorial is going to help you setup a webserver accessible
+  remotly from the internet.
+category: Tutorial
+author:
+  name: Farouk Mokhtari
+  email: fmokhtari@mail.ru
+  website: https://fmokhtari.com
+  btc: 1JJmuidSTRCugnBKH8H7bDxEmTtAAg4kyn
+  usdt: TWi6yNRhxzkmgZhhoriDzWgvrSsxbdQCb8
+  xmr: 87Asjp2TLCkKnw3PYsiKaTDwL8mNhiL7uV67ptCtVxqbSnaZfATQ6t4d1mfWnKu4kB4ieQHMApGhUdUY3h4RKBS2Kuc5RyW
+tags:
+  - server
+  - nginx
+  - linux
 draft: true
+date: 2022-07-16T13:57:06.410Z
 ---
-
-# Introduction
+## Introduction
 
 If you ended up reading this article, it means that you wanna start your own
 webserver but you don't know where to begin. Don't panic! There's nothing really
@@ -29,7 +29,7 @@ have before hand.
 - An old computer that lies down in you house.
 - A little knowleadge of the linux OS.
 
-# Let's get started
+## Let's get started
 
 First, you need to install Linux on your computer. Why Linux ? Because Linux is
 best suited for servers. I prefer [Debian](https://debian.org) distribution,
@@ -39,9 +39,9 @@ you, you can install for example [Ubuntu Server](https://ubuntu.com).
 I'm not gonna go through the process of installing Linux on your computer, you
 can find plenty of videos on YouTube that explains the process step-by-step.
 
-## Install nginx
-
-You have to install **nginx** on your server, this is your webserver.
+## Install tools
+### Install nginx
+You have to install **nginx** on your server, this is the webserver.
 
 - Debian / Ubuntu:
 
@@ -55,6 +55,7 @@ sudo apt install nginx
 sudo pacman -S nginx
 ```
 
+### Install openssh
 And then to access your server remotly you need **openssh** which can be
 installed by this command.
 
