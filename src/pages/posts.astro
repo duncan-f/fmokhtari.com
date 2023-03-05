@@ -18,7 +18,7 @@ const formatedPosts: CollectionEntry<"posts">[] = formatContent(posts, {
   title={'My Blog'}
   description="This is where I share my knowledge of technology"
 >
-  <Main>
+  <Main className="pt-10">
     <Heading className={'md:pt-10 pt-20'}>All Posts</Heading>
       { formatedPosts.map((post: any) => (
       <div class="pt-5">
