@@ -15,12 +15,12 @@ tags:
   - ctfs
 date: 2022-12-12T06:30:49.237Z
 ---
-# Introduction
+## Introduction
 
 This machine is an easy machine that demonstrates how you can easily exploit a
 basic HTTP Authentication.
 
-# Enumeration
+## Enumeration
 
 After the usual nmap scan we have the following results.
 
@@ -84,7 +84,7 @@ window.onload = init;
 This javascript file contains the credentials to the session, as it says in the
 commented line.
 
-# Exploitation
+## Exploitation
 
 This is an easy one to exploit since we can encode in the URL a reverse shell
 that gives us the access to the machine.
@@ -111,7 +111,7 @@ User wizard may run the following commands on photobomb:
     (root) SETENV: NOPASSWD: /opt/cleanup.sh
 ```
 
-# Priviledge Escalation
+## Priviledge Escalation
 
 It means we can execute **/opt/cleanup.sh** with some environment variables as
 root.
