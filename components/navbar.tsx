@@ -24,7 +24,18 @@ import ToggleTheme from "@/components/toggle-theme";
 
 const nunito = Nunito({ subsets: ["latin"], weight: ["400", "700"] });
 
-const LinkItem = ({ href, path, target, children, ...props }) => {
+const LinkItem = ({
+  href,
+  path,
+  target,
+  children,
+  ...props
+}: {
+  href: string;
+  path: string;
+  target?: string;
+  children: React.ReactNode;
+}) => {
   const active = path === href;
 
   const inactiveColor = useColorModeValue("gray.800", "whiteAlpha.900");
@@ -38,7 +49,10 @@ const LinkItem = ({ href, path, target, children, ...props }) => {
       color={active ? "#ddd" : inactiveColor}
       target={target}
       borderRadius="lg"
-      _hover={{ textDecoration: "none" }}
+      display="inline-flex"
+      alignItems="center"
+      gap={2}
+      style={{ textDecoration: "none" }}
       {...props}
     >
       {children}
@@ -46,7 +60,7 @@ const LinkItem = ({ href, path, target, children, ...props }) => {
   );
 };
 
-const Navbar = (props) => {
+const Navbar = (props: any) => {
   const { path } = props;
 
   return (
@@ -63,13 +77,13 @@ const Navbar = (props) => {
     >
       <Container
         py={2}
-        align="center"
+        alignItems="center"
         display="flex"
         maxW="container.md"
-        justify="space-between"
+        justifyContent="space-between"
       >
         <Flex justifyContent="center" alignItems="center" mr={5}>
-          <NextLink href="/" _hover={{ textDecoration: "none" }}>
+          <NextLink href="/" style={{ textDecoration: "none" }}>
             <Text
               color={useColorModeValue("gray.800", "whiteAlpha.900")}
               fontSize="22px"
@@ -99,11 +113,7 @@ const Navbar = (props) => {
               <LinkItem
                 target="_blank"
                 href="https://github.com/duncan-f/fmokhtari.com"
-                display="inline-flex"
-                alignItems="center"
-                gap={2}
                 path={path}
-                isExternal
               >
                 <FaGithub />
                 Source Code
@@ -112,7 +122,7 @@ const Navbar = (props) => {
             </ListItem>
           </List>
         </Stack>
-        <Box flex={1} align="right">
+        <Box flex={1} textAlign="right">
           <ToggleTheme />
           <Box ml={2} display={{ base: "inline-block", md: "none" }}>
             <Menu>

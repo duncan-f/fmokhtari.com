@@ -7,8 +7,6 @@ const lora = Lora({
   weight: ["400", "700"],
 });
 
-console.log(lora.variable);
-
 const styles = {
   global: (props: any) => ({
     body: {
