@@ -7,19 +7,22 @@ import { IconButton, useColorMode, useColorModeValue } from "@chakra-ui/react";
 const ToggleTheme: React.FC = () => {
   const [mounted, setMounted] = useState(false);
 
+  const { toggleColorMode } = useColorMode();
+  const theme = useColorModeValue("light", "dark");
+  const color = useColorModeValue("purple", "orange");
+  const icon = useColorModeValue(<FaMoon />, <FaSun />);
+
   useEffect(() => {
     setMounted(true);
   }, []);
 
   if (!mounted) return null;
 
-  const { toggleColorMode } = useColorMode();
-
   return (
     <AnimatePresence mode="wait" initial={false}>
       <motion.div
         style={{ display: "inline-block" }}
-        key={useColorModeValue("light", "dark")}
+        key={theme}
         initial={{ x: 20, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
         exit={{ x: -20, opacity: 0 }}
@@ -27,8 +30,8 @@ const ToggleTheme: React.FC = () => {
       >
         <IconButton
           aria-label="Toggle theme"
-          colorScheme={useColorModeValue("purple", "orange")}
-          icon={useColorModeValue(<FaMoon />, <FaSun />)}
+          colorScheme={color}
+          icon={icon}
           onClick={toggleColorMode}
         ></IconButton>
       </motion.div>
