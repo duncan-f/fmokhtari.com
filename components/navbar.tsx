@@ -22,7 +22,7 @@ import { Nunito } from "next/font/google";
 import { siteData } from "@/lib/config";
 import ToggleTheme from "@/components/toggle-theme";
 
-const nunito = Nunito({ subsets: ["latin"], weights: ["400", "700"] });
+const nunito = Nunito({ subsets: ["latin"], weight: ["400", "700"] });
 
 const LinkItem = ({ href, path, target, children, ...props }) => {
   const active = path === href;
