@@ -44,7 +44,7 @@ export default function Projects() {
                   p={4}
                 >
                   <CardHeader mb={2}>
-                    <Heading size="md" align="center">
+                    <Heading size="md" textAlign="center">
                       {project.title}
                     </Heading>
                   </CardHeader>
@@ -88,7 +88,7 @@ export default function Projects() {
                   p={4}
                 >
                   <CardHeader mb={2}>
-                    <Heading size="md" align="center">
+                    <Heading size="md" textAlign="center">
                       {collab.title}
                     </Heading>
                   </CardHeader>
