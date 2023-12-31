@@ -1,6 +1,6 @@
 "use client";
 
-import Link, { NextLink } from "next/link";
+import Link from "next/link";
 import Image from "next/image";
 import {
   Container,
@@ -117,7 +117,6 @@ export default function Home() {
             <ListItem>
               <Link href="https://twitter.com/duncan12back" target="_blank">
                 <Button
-                  as={NextLink}
                   variant="ghost"
                   leftIcon={<FaTwitter />}
                   aria-label="Twitter profile"
@@ -130,7 +129,6 @@ export default function Home() {
             <ListItem>
               <Link href="https://github.com/duncan-f" target="_blank">
                 <Button
-                  as={NextLink}
                   variant="ghost"
                   leftIcon={<FaGithub />}
                   aria-label="Github profile"
