@@ -8,6 +8,7 @@ import {
   CardBody,
   CardHeader,
   CardFooter,
+  Container,
   Divider,
   Heading,
   Image,
@@ -25,115 +26,95 @@ export default function Projects() {
 
   return (
     <Main>
-      <Section delay={0.1}>
-        <Heading as="h3" fontSize={20}>
-          Projects
-        </Heading>
-      </Section>
-      <Section delay={0.2}>
-        <SimpleGrid columns={[1, 2, 2]} gap={4}>
-          {projectsList.map((project, idx) => (
-            <Card
-              key={idx}
-              variant="unstyled"
-              overflow="hidden"
-              size="sm"
-              bg={color}
-              p={4}
-            >
-              <CardHeader mb={2}>
-                <Heading size="md" align="center">
-                  {project.title}
-                </Heading>
-              </CardHeader>
-              <CardBody my={2}>
-                <Image
-                  src={project.image}
-                  alt={project.title}
-                  borderRadius="lg"
-                  mb={2}
-                />
-                <Text>{project.description}</Text>
-              </CardBody>
-              <Divider />
-              <CardFooter>
-                <Box
-                  display="flex"
-                  alignItems="center"
-                  justify="space-between"
-                  maxW="full"
-                  gap={20}
-                  mt={2}
+      <Container>
+        <Section delay={0.1}>
+          <Heading as="h3" fontSize={20}>
+            Projects
+          </Heading>
+        </Section>
+        <Section delay={0.2}>
+          <SimpleGrid columns={[1, 2, 2]} gap={4}>
+            {projectsList.map((project, idx) => (
+              <Link key={idx} href={project.href}>
+                <Card
+                  variant="unstyled"
+                  overflow="hidden"
+                  size="sm"
+                  bg={color}
+                  p={4}
                 >
-                  <Box display="inline-flex" gap={1}>
-                    {project.techs.map((tech, idx) => (
-                      <Badge key={idx}>{tech}</Badge>
-                    ))}
-                  </Box>
-                  <Link href={project.href}>
-                    <Button>View details</Button>
-                  </Link>
-                </Box>
-              </CardFooter>
-            </Card>
-          ))}
-        </SimpleGrid>
-      </Section>
-      <Section delay={0.3}>
-        <Divider mb={5} />
-        <Heading as="h3" fontSize={20}>
-          Collaborations
-        </Heading>
-      </Section>
-      <Section delay={0.4}>
-        <SimpleGrid columns={[1, 1, 2]} gap={6}>
-          {colabList.map((collab, idx) => (
-            <Card
-              key={idx}
-              variant="unstyled"
-              overflow="hidden"
-              size="sm"
-              bg={color}
-              p={4}
-            >
-              <CardHeader mb={2}>
-                <Heading size="md" align="center">
-                  {collab.title}
-                </Heading>
-              </CardHeader>
-              <CardBody my={2}>
-                <Image
-                  src={collab.image}
-                  alt={collab.title}
-                  borderRadius="lg"
-                  mb={2}
-                />
-                <Text>{collab.description}</Text>
-              </CardBody>
-              <Divider />
-              <CardFooter>
-                <Box
-                  display="flex"
-                  alignItems="center"
-                  justify="space-between"
-                  maxW="full"
-                  gap={20}
-                  mt={2}
+                  <CardHeader mb={2}>
+                    <Heading size="md" align="center">
+                      {project.title}
+                    </Heading>
+                  </CardHeader>
+                  <CardBody my={2}>
+                    <Image
+                      src={project.image}
+                      alt={project.title}
+                      borderRadius="lg"
+                      mb={2}
+                    />
+                    <Text>{project.description}</Text>
+                  </CardBody>
+                  <Divider />
+                  <CardFooter>
+                    <Box display="inline-flex" mt={2} gap={1}>
+                      {project.techs.map((tech, idx) => (
+                        <Badge key={idx}>{tech}</Badge>
+                      ))}
+                    </Box>
+                  </CardFooter>
+                </Card>
+              </Link>
+            ))}
+          </SimpleGrid>
+        </Section>
+        <Section delay={0.3}>
+          <Divider mb={5} />
+          <Heading as="h3" fontSize={20}>
+            Collaborations
+          </Heading>
+        </Section>
+        <Section delay={0.4}>
+          <SimpleGrid columns={[1, 1, 2]} gap={6}>
+            {colabList.map((collab, idx) => (
+              <Link key={idx} href={collab.href}>
+                <Card
+                  variant="unstyled"
+                  overflow="hidden"
+                  size="sm"
+                  bg={color}
+                  p={4}
                 >
-                  <Box display="inline-flex" gap={1}>
-                    {collab.techs.map((tech, idx) => (
-                      <Badge key={idx}>{tech}</Badge>
-                    ))}
-                  </Box>
-                  <Link href={collab.href}>
-                    <Button>View details</Button>
-                  </Link>
-                </Box>
-              </CardFooter>
-            </Card>
-          ))}
-        </SimpleGrid>
-      </Section>
+                  <CardHeader mb={2}>
+                    <Heading size="md" align="center">
+                      {collab.title}
+                    </Heading>
+                  </CardHeader>
+                  <CardBody my={2}>
+                    <Image
+                      src={collab.image}
+                      alt={collab.title}
+                      borderRadius="lg"
+                      mb={2}
+                    />
+                    <Text>{collab.description}</Text>
+                  </CardBody>
+                  <Divider />
+                  <CardFooter>
+                    <Box display="inline-flex" mt={2} gap={1}>
+                      {collab.techs.map((tech, idx) => (
+                        <Badge key={idx}>{tech}</Badge>
+                      ))}
+                    </Box>
+                  </CardFooter>
+                </Card>
+              </Link>
+            ))}
+          </SimpleGrid>
+        </Section>
+      </Container>
     </Main>
   );
 }

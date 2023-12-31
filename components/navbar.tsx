@@ -34,12 +34,11 @@ const LinkItem = ({ href, path, target, children, ...props }) => {
       p={2}
       as={NextLink}
       href={href}
-      scroll={false}
       bg={active ? "primary" : undefined}
       color={active ? "#ddd" : inactiveColor}
       target={target}
       borderRadius="lg"
-      style={{ "text-decoration": "none" }}
+      _hover={{ textDecoration: "none" }}
       {...props}
     >
       {children}
@@ -70,12 +69,7 @@ const Navbar = (props) => {
         justify="space-between"
       >
         <Flex justifyContent="center" alignItems="center" mr={5}>
-          <Link
-            as={NextLink}
-            href="/"
-            scroll={false}
-            style={{ "text-decoration": "none" }}
-          >
+          <NextLink href="/" _hover={{ textDecoration: "none" }}>
             <Text
               color={useColorModeValue("gray.800", "whiteAlpha.900")}
               fontSize="22px"
@@ -84,7 +78,7 @@ const Navbar = (props) => {
             >
               {siteData.brand}
             </Text>
-          </Link>
+          </NextLink>
         </Flex>
         <Stack
           direction={{ base: "column", md: "row" }}
