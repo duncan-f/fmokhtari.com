@@ -58,6 +58,10 @@ export default function Geoserices() {
       </Section>
       <Section delay={0.4}>
         <HStack>
+          <Badge>Published</Badge>
+          <Text>2023</Text>
+        </HStack>
+        <HStack>
           <Badge>Website</Badge>
           <Link href="https://sboulila.netlify.app/" target="_blank">
             https://sboulila.netlify.app/

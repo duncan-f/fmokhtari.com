@@ -69,6 +69,10 @@ export default function Blog() {
       </Section>
       <Section delay={0.4}>
         <HStack>
+          <Badge>Published</Badge>
+          <Text>2022</Text>
+        </HStack>
+        <HStack>
           <Badge>Website</Badge>
           <Link href="https://duncan-f.github.io/" target="_blank">
             https://duncan-f.github.io/
