@@ -13,7 +13,7 @@ const Main = ({ children }: { children: React.ReactNode }) => {
     <Box as="main" pb={8}>
       <Navbar path={path} />
 
-      <Container maxW="container.md" pt={14}>
+      <Container maxW="container.md" pt="90px">
         {children}
 
         <Footer />
