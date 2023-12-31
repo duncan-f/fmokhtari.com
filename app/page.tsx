@@ -119,7 +119,7 @@ export default function Home() {
                 <Button
                   variant="ghost"
                   leftIcon={<FaTwitter />}
-                  aria-label="Twitter profile"
+                  aria-label="@duncan12back"
                 >
                   @duncan12back
                 </Button>
@@ -131,7 +131,7 @@ export default function Home() {
                 <Button
                   variant="ghost"
                   leftIcon={<FaGithub />}
-                  aria-label="Github profile"
+                  aria-label="@duncan-f"
                 >
                   @duncan-f
                 </Button>
@@ -143,7 +143,7 @@ export default function Home() {
                 <Button
                   variant="ghost"
                   leftIcon={<FaYoutube />}
-                  aria-label="YouTube Channel"
+                  aria-label="@SecWriteups"
                 >
                   @SecWriteups
                 </Button>
