@@ -8,8 +8,13 @@ import { Providers } from "@/components/providers";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: siteData.title,
+  title: { template: "%s - " + siteData.title, default: siteData.title },
   description: siteData.description,
+  openGraph: {
+    title: siteData.title,
+    description: siteData.description,
+    images: ["/images/coding.jpg"],
+  },
 };
 
 export default function RootLayout({

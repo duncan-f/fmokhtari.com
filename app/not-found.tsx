@@ -3,16 +3,16 @@
 import Link from "next/link";
 import { Box, Button, Divider, Flex, Heading, Text } from "@chakra-ui/react";
 import { ChevronLeftIcon } from "@chakra-ui/icons";
-import Main from "@/layouts/main";
+import Article from "@/layouts/article";
 
 const NotFound = () => {
   return (
-    <Main>
+    <Article>
       <Flex
         direction="column"
         align="center"
         justify="center"
-        h="calc(75vh)"
+        h="calc(70vh)"
         gap={8}
       >
         <Box h={8} display="flex" alignItems="center" gap={2}>
@@ -22,10 +22,12 @@ const NotFound = () => {
         </Box>
         <Text fontSize="xl">What are you looking for?!</Text>
         <Link href="/">
-          <Button leftIcon={<ChevronLeftIcon />}>Return Home</Button>
+          <Button colorScheme="facebook" leftIcon={<ChevronLeftIcon />}>
+            Return Home
+          </Button>
         </Link>
       </Flex>
-    </Main>
+    </Article>
   );
 };
 

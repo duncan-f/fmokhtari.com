@@ -1,5 +1,7 @@
 # Portfolio
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/4ef7dea5-3fd7-4fdc-a29e-bc5dc57f1bcd/deploy-status)](https://app.netlify.com/sites/mokhtari/deploys)
+
 My current website is a React and Next.js powered portfolio that showcases my
 ongoing learning journey. By combining the flexibility of React with the
 server-side rendering capabilities of Next.js, I've created an interactive and

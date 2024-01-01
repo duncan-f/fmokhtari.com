@@ -17,7 +17,7 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 import Link from "next/link";
-import Main from "@/layouts/main";
+import Article from "@/layouts/article";
 import Section from "@/components/section";
 import { colabList, projectsList } from "@/lib/config";
 
@@ -25,7 +25,7 @@ export default function Projects() {
   const color = useColorModeValue("#f0e7db40", "#20202380");
 
   return (
-    <Main>
+    <Article>
       <Container>
         <Section delay={0.1}>
           <Heading as="h3" fontSize={20}>
@@ -115,6 +115,6 @@ export default function Projects() {
           </SimpleGrid>
         </Section>
       </Container>
-    </Main>
+    </Article>
   );
 }

@@ -15,13 +15,13 @@ import {
 } from "@chakra-ui/react";
 import { ExternalLinkIcon } from "@chakra-ui/icons";
 import NextLink from "next/link";
-import Main from "@/layouts/main";
+import Article from "@/layouts/article";
 import Section from "@/components/section";
 import Paragraph from "@/components/paragraph";
 
 export default function Blog() {
   return (
-    <Main>
+    <Article>
       <Container>
         <Section delay={0.1}>
           <Breadcrumb>
@@ -94,6 +94,6 @@ export default function Blog() {
           />
         </Section>
       </Container>
-    </Main>
+    </Article>
   );
 }
