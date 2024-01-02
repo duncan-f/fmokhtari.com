@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { siteData } from "@/lib/config";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://mokhtari.netlify.app"),
   title: "Blog - " + siteData.author,
   description:
     "This is my blog, it is powered by Astro. It's where I share my knowledge in technology and cyber security.",
@@ -9,7 +10,7 @@ export const metadata: Metadata = {
     title: "Blog",
     description:
       "This is my blog, it is powered by Astro. It's where I share my knowledge in technology and cyber security.",
-    images: ["/images/projects/blog.png"],
+    images: "/images/projects/blog.png",
   },
 };
 
