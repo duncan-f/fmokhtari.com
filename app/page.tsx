@@ -3,9 +3,9 @@
 import Image from "next/image";
 import NextLink from "next/link";
 import {
+  Box,
   Container,
   Flex,
-  Box,
   Heading,
   Button,
   SimpleGrid,
@@ -66,20 +66,19 @@ export default function Home() {
             <Paragraph>
               I&apos;m an engineer and an indie web developer passionate about
               Cyber Security, Ethical Hacking and CTFs. I like solving
-              challenges on{" "}
-              <Link href="https://www.hackthebox.com/" target="_blank">
-                Hack The Box
-              </Link>{" "}
-              and{" "}
-              <Link href="https://tryhackme.com/" target="_blank">
-                Try Hack Me
-              </Link>
-              . You can visit{" "}
-              <Link as={NextLink} href="/projects">
-                my portfolio
-              </Link>
-              .
+              challenges on Hack The Box and Try Hack Me .
             </Paragraph>
+            <Box textAlign="center" my={4}>
+              <Link as={NextLink} href="/projects">
+                <Button
+                  variant="outline"
+                  rightIcon={<ChevronRightIcon />}
+                  colorScheme="green"
+                >
+                  My portfolio
+                </Button>
+              </Link>
+            </Box>
           </Section>
 
           <Section delay={0.3}>
