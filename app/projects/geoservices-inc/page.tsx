@@ -7,8 +7,9 @@ import {
   BreadcrumbLink,
   Container,
   Heading,
-  HStack,
   Image,
+  List,
+  ListItem,
   Link,
   SimpleGrid,
   Text,
@@ -46,34 +47,42 @@ export default function Geoserices() {
         </Section>
         <Section delay={0.2}>
           <Paragraph>
-            This website was created with Astro, combined with React. I stumbled
-            upon this technology on YouTube and I wanted to try it out and make
-            something with it. It&apos;s an easy and fast Framework for static
-            websites.
+            This website was created using Astro, with the combination of React.
+            I stumbled across this technology on a YouTube video and I wanted to
+            try it out and make something with it. It&apos;s a powerful and fast
+            Framework for static and static client-side web apps.
           </Paragraph>
         </Section>
         <Section delay={0.3}>
           <Paragraph>
-            I created this website for a friend. His company operates in
-            geoscience and geotechnical engineering.
+            I had the pleasure of creating this stunning website for my
+            friend&apos;s company in the exciting fields of geoscience and
+            geotechnical engineering.
           </Paragraph>
         </Section>
         <Section delay={0.4}>
-          <HStack>
-            <Badge>Published</Badge>
-            <Text>2023</Text>
-          </HStack>
-          <HStack>
-            <Badge>Website</Badge>
-            <Link href="https://sboulila.netlify.app/" target="_blank">
-              https://sboulila.netlify.app/
-              <ExternalLinkIcon ml={1} />
-            </Link>
-          </HStack>
-          <HStack>
-            <Badge>Stack</Badge>
-            <Text>Astro, React, Javascript</Text>
-          </HStack>
+          <List>
+            <ListItem display="flex" alignItems="center" gap={2}>
+              <Badge>Published</Badge>
+              <Text>2023</Text>
+            </ListItem>
+            <ListItem display="flex" alignItems="center" gap={2}>
+              <Badge>Website</Badge>
+              <Link
+                href="https://sboulila.netlify.app/"
+                target="_blank"
+                display="inline-flex"
+                alignItems="center"
+              >
+                https://sboulila.netlify.app/
+                <ExternalLinkIcon ml={1} />
+              </Link>
+            </ListItem>
+            <ListItem display="flex" alignItems="center" gap={2}>
+              <Badge>Stack</Badge>
+              <Text>Astro, React, Javascript</Text>
+            </ListItem>
+          </List>
         </Section>
 
         <Section delay={0.5}>

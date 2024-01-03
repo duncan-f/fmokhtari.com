@@ -1,7 +1,7 @@
 "use client";
 
-import Link from "next/link";
 import Image from "next/image";
+import NextLink from "next/link";
 import {
   Container,
   Flex,
@@ -11,6 +11,8 @@ import {
   SimpleGrid,
   List,
   ListItem,
+  Link,
+  Text,
 } from "@chakra-ui/react";
 import { ChevronRightIcon, EmailIcon } from "@chakra-ui/icons";
 import { SiBuymeacoffee } from "react-icons/si";
@@ -64,41 +66,42 @@ export default function Home() {
             <Paragraph>
               I&apos;m an engineer and an indie web developer passionate about
               Cyber Security, Ethical Hacking and CTFs. I like solving
-              challenges on Hack The Box and Try Hack Me.
-            </Paragraph>
-            <Box textAlign="center" my={5}>
-              <Link href="/projects">
-                <Button
-                  colorScheme="gray"
-                  variant="link"
-                  rightIcon={<ChevronRightIcon />}
-                >
-                  Portfolio
-                </Button>
+              challenges on{" "}
+              <Link href="https://www.hackthebox.com/" target="_blank">
+                Hack The Box
+              </Link>{" "}
+              and{" "}
+              <Link href="https://tryhackme.com/" target="_blank">
+                Try Hack Me
               </Link>
-            </Box>
+              . You can visit{" "}
+              <Link as={NextLink} href="/projects">
+                my portfolio
+              </Link>
+              .
+            </Paragraph>
           </Section>
 
           <Section delay={0.3}>
             <Heading as="h3" variant="section-title">
               Technologies I use
             </Heading>
-            <SimpleGrid columns={[2, 2, 3]} gap={6} my={2}>
+            <SimpleGrid columns={[2, 3, 4]} gap={2} my={2}>
               {techsList.map((tech, idx) => (
                 <Flex
                   flexDirection="column"
                   alignItems="center"
-                  gap={2}
+                  gap={{ base: 3, md: 2 }}
                   key={idx}
                 >
                   <Image
                     key={idx}
                     alt={tech.name}
                     src={tech.href}
-                    width={65}
-                    height={65}
+                    width={48}
+                    height={48}
                   />
-                  <p>{tech.name}</p>
+                  <Text fontSize="sm">{tech.name}</Text>
                 </Flex>
               ))}
             </SimpleGrid>
@@ -108,7 +111,7 @@ export default function Home() {
             <Heading as="h3" variant="section-title">
               I speak
             </Heading>
-            <Paragraph>Berberian, English, French, Arabic, Russian</Paragraph>
+            <Text>Berberian, English, French, Arabic, Russian</Text>
           </Section>
 
           <Section delay={0.5}>

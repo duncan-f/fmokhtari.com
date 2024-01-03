@@ -42,39 +42,159 @@ export const colabList = [
 
 export const techsList = [
   {
-    name: "Python",
-    href: "/icons/python.png",
+    name: "Windows",
+    href: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/windows8/windows8-original.svg",
+  },
+  {
+    name: "Linux",
+    href: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg",
+  },
+  {
+    name: "Redhat",
+    href: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redhat/redhat-original.svg",
+  },
+  {
+    name: "Fedora",
+    href: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fedora/fedora-original.svg",
+  },
+  {
+    name: "Ubuntu",
+    href: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ubuntu/ubuntu-plain.svg",
+  },
+  {
+    name: "Debian",
+    href: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/debian/debian-original.svg",
+  },
+  {
+    name: "Raspberry PI",
+    href: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/raspberrypi/raspberrypi-original.svg",
+  },
+  {
+    name: "Bash",
+    href: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg",
+  },
+  {
+    name: "Vim & Neovim",
+    href: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vim/vim-original.svg",
+  },
+  {
+    name: "SSH",
+    href: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ssh/ssh-original.svg",
+  },
+  {
+    name: "Putty",
+    href: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/putty/putty-original.svg",
+  },
+  {
+    name: "neo4j",
+    href: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/neo4j/neo4j-original.svg",
+  },
+  {
+    name: "Tomcat",
+    href: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tomcat/tomcat-original.svg",
+  },
+  {
+    name: "Apache",
+    href: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apache/apache-original-wordmark.svg",
+  },
+  {
+    name: "nginx",
+    href: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nginx/nginx-original.svg",
+  },
+  {
+    name: "Ansible",
+    href: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ansible/ansible-original.svg",
+  },
+  {
+    name: "Docker",
+    href: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg",
+  },
+  {
+    name: "git",
+    href: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
+  },
+  {
+    name: "Composer",
+    href: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/composer/composer-original.svg",
+  },
+  {
+    name: "npm",
+    href: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/npm/npm-original-wordmark.svg",
+  },
+  {
+    name: "Node.js",
+    href: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
+  },
+  {
+    name: "Express.js",
+    href: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg",
+  },
+  {
+    name: "React.js",
+    href: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+  },
+  {
+    name: "Next.js",
+    href: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg",
   },
   {
     name: "Javascript",
-    href: "/icons/js.png",
+    href: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
   },
   {
     name: "Typescript",
-    href: "/icons/typescript.png",
+    href: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
+  },
+  {
+    name: "HTML",
+    href: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
+  },
+  {
+    name: "CSS",
+    href: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
+  },
+  {
+    name: "Tailwind CSS",
+    href: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg",
+  },
+  {
+    name: "Hugo",
+    href: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/hugo/hugo-original.svg",
   },
   {
     name: "PHP",
-    href: "/icons/php.png",
-  },
-  {
-    name: "NodeJS",
-    href: "/icons/nodejs.png",
-  },
-  {
-    name: "MySQL",
-    href: "/icons/mysql.png",
+    href: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg",
   },
   {
     name: "Laravel",
-    href: "/icons/laravel.png",
+    href: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-plain.svg",
+  },
+  {
+    name: "MySQL",
+    href: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original-wordmark.svg",
+  },
+  {
+    name: "PostgreSQL",
+    href: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
+  },
+  {
+    name: "Python",
+    href: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
   },
   {
     name: "Django",
-    href: "/icons/django.png",
+    href: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg",
   },
   {
-    name: "React",
-    href: "/icons/react.png",
+    name: "FastAPI",
+    href: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg",
+  },
+  {
+    name: "C/C++",
+    href: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg",
+  },
+  {
+    name: "LaTex",
+    href: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/latex/latex-original.svg",
   },
 ];

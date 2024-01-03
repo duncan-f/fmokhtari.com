@@ -9,7 +9,8 @@ import {
   Heading,
   Image,
   Link,
-  HStack,
+  List,
+  ListItem,
   SimpleGrid,
   Text,
 } from "@chakra-ui/react";
@@ -70,21 +71,23 @@ export default function Blog() {
           </Paragraph>
         </Section>
         <Section delay={0.4}>
-          <HStack>
-            <Badge>Published</Badge>
-            <Text>2022</Text>
-          </HStack>
-          <HStack>
-            <Badge>Website</Badge>
-            <Link href="https://duncan-f.github.io/" target="_blank">
-              https://duncan-f.github.io/
-              <ExternalLinkIcon ml={1} />
-            </Link>
-          </HStack>
-          <HStack>
-            <Badge>Stack</Badge>
-            <Text>Astro, Typescript, Tailwind CSS</Text>
-          </HStack>
+          <List>
+            <ListItem display="flex" alignItems="center" gap={2}>
+              <Badge>Published</Badge>
+              <Text>2022</Text>
+            </ListItem>
+            <ListItem display="flex" alignItems="center" gap={2}>
+              <Badge>Website</Badge>
+              <Link href="https://duncan-f.github.io/" target="_blank">
+                https://duncan-f.github.io/
+                <ExternalLinkIcon ml={1} />
+              </Link>
+            </ListItem>
+            <ListItem display="flex" alignItems="center" gap={2}>
+              <Badge>Stack</Badge>
+              <Text>Astro, Typescript, Tailwind CSS</Text>
+            </ListItem>
+          </List>
         </Section>
         <Section delay={0.5}>
           <Image
