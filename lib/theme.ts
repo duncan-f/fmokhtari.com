@@ -31,13 +31,14 @@ const components = {
   },
   Link: {
     baseStyle: (props: any) => ({
-      color: mode("#3d7aed", "#A3A3FF")(props),
+      color: mode("#3d7aed", "#FF85D0")(props),
       textUnderlineOffset: 3,
     }),
   },
 };
 
 const fonts = {
+  // heading: "'M PLUS Rounded 1c'",
   heading: lora.style.fontFamily,
 };
 
