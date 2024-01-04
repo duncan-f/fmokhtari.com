@@ -110,6 +110,11 @@ const Navbar = (props: any) => {
               </LinkItem>
             </ListItem>
             <ListItem>
+              <LinkItem href="/writeups" path={path}>
+                Writeups
+              </LinkItem>
+            </ListItem>
+            <ListItem>
               <LinkItem
                 target="_blank"
                 href="https://github.com/duncan-f/fmokhtari.com"
@@ -138,6 +143,9 @@ const Navbar = (props: any) => {
                 </MenuItem>
                 <MenuItem as={NextLink} href="/projects">
                   Projects
+                </MenuItem>
+                <MenuItem as={NextLink} href="/writeups">
+                  Writeups
                 </MenuItem>
                 <MenuItem
                   as={Link}

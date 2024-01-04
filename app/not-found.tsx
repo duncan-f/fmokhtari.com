@@ -12,7 +12,7 @@ const NotFound = () => {
         direction="column"
         align="center"
         justify="center"
-        h="calc(70vh)"
+        h="calc(100vh)"
         gap={8}
       >
         <Box h={8} display="flex" alignItems="center" gap={2}>

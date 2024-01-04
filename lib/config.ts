@@ -14,6 +14,24 @@ export const menuList = [
     external: true,
   },
 ];
+
+export const writeupsList = [
+  {
+    title: "Hack the Box - Writeup (Photobomb)",
+    description:
+      "This is a walkthrought for the Photobomb CTF on Hack The Box. It shows how easily we can exploit an Basic HTTP Authentication.",
+    href: "https://duncan-f.github.io/posts/hack-the-box-writeup-photobomb/",
+    image: "/images/writeups/photobomb.png",
+  },
+  {
+    title: "Hack the Box - Writeup (Shoppy)",
+    description:
+      "This box consists of searching for the credentials on the webapp, and then find our way up to escalate the priviledges for root access to the machine.",
+    href: "https://duncan-f.github.io/posts/hack-the-box-writeup-shoppy/",
+    image: "/images/writeups/shoppy.png",
+  },
+];
+
 export const projectsList = [
   {
     title: "Blog",
@@ -24,6 +42,16 @@ export const projectsList = [
     url: "https://duncan-f.github.io/",
     techs: ["Astro", "React"],
     published: 2022,
+  },
+  {
+    title: "ChatGPT Telegram Bot",
+    description:
+      "This project combines openai from ChatGPT with the Telegram API. It's a very helpful assistant.",
+    image: "/images/projects/chatgpt-bot.png",
+    href: "/projects/chatgpt-bot",
+    url: "https://t.me/MacLeodClanBot",
+    techs: ["python"],
+    published: 2023,
   },
 ];
 

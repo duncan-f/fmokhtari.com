@@ -53,6 +53,8 @@ export default function Projects() {
                       src={project.image}
                       alt={project.title}
                       borderRadius="lg"
+                      width={240}
+                      height={150}
                       mb={2}
                     />
                     <Text>{project.description}</Text>
@@ -97,6 +99,8 @@ export default function Projects() {
                       src={collab.image}
                       alt={collab.title}
                       borderRadius="lg"
+                      width={240}
+                      height={150}
                       mb={2}
                     />
                     <Text>{collab.description}</Text>
