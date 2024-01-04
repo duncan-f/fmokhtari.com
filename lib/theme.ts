@@ -38,7 +38,6 @@ const components = {
 };
 
 const fonts = {
-  // heading: "'M PLUS Rounded 1c'",
   heading: lora.style.fontFamily,
 };
 

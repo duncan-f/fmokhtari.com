@@ -22,6 +22,7 @@ export const writeupsList = [
       "This is a walkthrought for the Photobomb CTF on Hack The Box. It shows how easily we can exploit an Basic HTTP Authentication.",
     href: "https://duncan-f.github.io/posts/hack-the-box-writeup-photobomb/",
     image: "/images/writeups/photobomb.png",
+    published: "2022-12-12T06:30:49.237Z",
   },
   {
     title: "Hack the Box - Writeup (Shoppy)",
@@ -29,6 +30,7 @@ export const writeupsList = [
       "This box consists of searching for the credentials on the webapp, and then find our way up to escalate the priviledges for root access to the machine.",
     href: "https://duncan-f.github.io/posts/hack-the-box-writeup-shoppy/",
     image: "/images/writeups/shoppy.png",
+    published: "2022-12-10T08:53:17.813Z",
   },
 ];
 

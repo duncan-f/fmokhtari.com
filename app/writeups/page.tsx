@@ -21,6 +21,7 @@ import { writeupsList } from "@/lib/config";
 
 export default function Writeups() {
   const color = useColorModeValue("#f0e7db40", "#20202380");
+  const pubColor = useColorModeValue("gray.600", "gray.300");
 
   return (
     <Article>
@@ -39,12 +40,15 @@ export default function Writeups() {
                   overflow="hidden"
                   size="sm"
                   bg={color}
-                  p={4}
+                  p={2}
                 >
-                  <CardHeader mb={2}>
-                    <Heading size="md" textAlign="center">
+                  <CardHeader mb={2} textAlign="center">
+                    <Heading size="md" mb={1}>
                       {write.title}
                     </Heading>
+                    <Text fontSize="sm" color={pubColor}>
+                      Published on {new Date(write.published).toDateString()}
+                    </Text>
                   </CardHeader>
                   <CardBody my={2}>
                     <Image

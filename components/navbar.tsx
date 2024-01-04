@@ -39,13 +39,16 @@ const LinkItem = ({
   const active = path === href;
 
   const inactiveColor = useColorModeValue("gray.800", "whiteAlpha.900");
+  // const activeColor = useColorModeValue("gray.700", "#fff");
+  const bgColor = useColorModeValue("#805ad5", "#a0aec040");
 
   return (
     <Link
-      p={2}
+      py={2}
+      px={4}
       as={NextLink}
       href={href}
-      bg={active ? "#a0aec040" : undefined}
+      bg={active ? bgColor : undefined}
       color={active ? "#fff" : inactiveColor}
       target={target}
       borderRadius="lg"

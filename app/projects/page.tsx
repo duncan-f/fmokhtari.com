@@ -41,7 +41,7 @@ export default function Projects() {
                   overflow="hidden"
                   size="sm"
                   bg={color}
-                  p={4}
+                  p={2}
                 >
                   <CardHeader mb={2}>
                     <Heading size="md" textAlign="center">
