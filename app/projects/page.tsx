@@ -39,6 +39,7 @@ export default function Projects() {
                 <Card
                   variant="unstyled"
                   overflow="hidden"
+                  textAlign={{ base: "center", md: "left" }}
                   size="sm"
                   bg={color}
                   p={2}
@@ -53,8 +54,8 @@ export default function Projects() {
                       src={project.image}
                       alt={project.title}
                       borderRadius="lg"
-                      width={240}
-                      height={150}
+                      width={{ base: "full", md: 240 }}
+                      height={{ base: "full", md: 150 }}
                       mb={2}
                     />
                     <Text>{project.description}</Text>
@@ -85,6 +86,7 @@ export default function Projects() {
                 <Card
                   variant="unstyled"
                   overflow="hidden"
+                  textAlign={{ base: "center", md: "left" }}
                   size="sm"
                   bg={color}
                   p={4}
@@ -99,8 +101,8 @@ export default function Projects() {
                       src={collab.image}
                       alt={collab.title}
                       borderRadius="lg"
-                      width={240}
-                      height={150}
+                      width={{ base: "full", md: 240 }}
+                      height={{ base: "full", md: 150 }}
                       mb={2}
                     />
                     <Text>{collab.description}</Text>

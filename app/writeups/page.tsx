@@ -38,6 +38,7 @@ export default function Writeups() {
                 <Card
                   variant="unstyled"
                   overflow="hidden"
+                  textAlign={{ base: "center", md: "left" }}
                   size="sm"
                   bg={color}
                   p={2}
