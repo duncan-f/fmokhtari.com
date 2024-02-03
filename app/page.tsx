@@ -68,13 +68,9 @@ export default function Home() {
               Cyber Security, Ethical Hacking and CTFs. I like solving
               challenges on Hack The Box and Try Hack Me .
             </Paragraph>
-            <Box textAlign="center" my={4}>
+            <Box textAlign="center" my={8}>
               <Link as={NextLink} href="/projects">
-                <Button
-                  variant="outline"
-                  rightIcon={<ChevronRightIcon />}
-                  colorScheme="green"
-                >
+                <Button rightIcon={<ChevronRightIcon />} colorScheme="blue">
                   My portfolio
                 </Button>
               </Link>
