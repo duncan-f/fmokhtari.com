@@ -197,7 +197,7 @@ export const techsList = [
   },
   {
     name: "Laravel",
-    href: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-plain.svg",
+    href: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg",
   },
   {
     name: "MySQL",
