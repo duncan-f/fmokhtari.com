@@ -185,7 +185,7 @@ export const techsList = [
   },
   {
     name: "Tailwind CSS",
-    href: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg",
+    href: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg",
   },
   {
     name: "Hugo",
