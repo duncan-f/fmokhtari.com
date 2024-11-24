@@ -139,18 +139,6 @@ export default function Home() {
               </ListItem>
 
               <ListItem>
-                <Link href="https://youtube.com/@secwriteups" target="_blank">
-                  <Button
-                    variant="ghost"
-                    leftIcon={<FaYoutube />}
-                    aria-label="@SecWriteups"
-                  >
-                    @SecWriteups
-                  </Button>
-                </Link>
-              </ListItem>
-
-              <ListItem>
                 <Link
                   href="https://www.buymeacoffee.com/f0uadfS"
                   target="_blank"

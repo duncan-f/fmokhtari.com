@@ -44,6 +44,8 @@ export const projectsList = [
     url: "https://duncan-f.github.io/",
     techs: ["Astro", "React"],
     published: 2022,
+    purchasable: false,
+    amount: 0,
   },
   {
     title: "ChatGPT Telegram Bot",
@@ -54,6 +56,8 @@ export const projectsList = [
     url: "https://t.me/MacLeodClanBot",
     techs: ["python"],
     published: 2023,
+    purchasable: false,
+    amount: 20.0,
   },
 ];
 
@@ -67,6 +71,8 @@ export const colabList = [
     url: "https://sboulila.netlify.app/",
     techs: ["Astro", "React"],
     published: 2023,
+    purchasable: false,
+    amount: 0,
   },
 ];
 

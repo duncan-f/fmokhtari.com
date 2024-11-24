@@ -49,6 +49,12 @@ export default function Projects() {
                       {project.title}
                     </Heading>
                   </CardHeader>
+                  <Box display="inline-flex" mt={2} gap={1}>
+                    {project.techs.map((tech, idx) => (
+                      <Badge key={idx}>{tech}</Badge>
+                    ))}
+                  </Box>
+                  <Divider mt={4} />
                   <CardBody my={2}>
                     <Image
                       src={project.image}
@@ -60,14 +66,11 @@ export default function Projects() {
                     />
                     <Text>{project.description}</Text>
                   </CardBody>
-                  <Divider />
-                  <CardFooter>
-                    <Box display="inline-flex" mt={2} gap={1}>
-                      {project.techs.map((tech, idx) => (
-                        <Badge key={idx}>{tech}</Badge>
-                      ))}
-                    </Box>
-                  </CardFooter>
+                  {project.purchasable && (
+                    <CardFooter className="flex items-center justify-end">
+                      <Button colorScheme="teal">Buy {project.amount}$</Button>
+                    </CardFooter>
+                  )}
                 </Card>
               </Link>
             ))}
@@ -96,6 +99,12 @@ export default function Projects() {
                       {collab.title}
                     </Heading>
                   </CardHeader>
+                  <Box display="inline-flex" mt={2} gap={1}>
+                    {collab.techs.map((tech, idx) => (
+                      <Badge key={idx}>{tech}</Badge>
+                    ))}
+                  </Box>
+                  <Divider mt={4} />
                   <CardBody my={2}>
                     <Image
                       src={collab.image}
@@ -107,14 +116,11 @@ export default function Projects() {
                     />
                     <Text>{collab.description}</Text>
                   </CardBody>
-                  <Divider />
-                  <CardFooter>
-                    <Box display="inline-flex" mt={2} gap={1}>
-                      {collab.techs.map((tech, idx) => (
-                        <Badge key={idx}>{tech}</Badge>
-                      ))}
-                    </Box>
-                  </CardFooter>
+                  {collab.purchasable && (
+                    <CardFooter className="flex items-center justify-end">
+                      <Button colorScheme="teal">Buy {collab.amount}$</Button>
+                    </CardFooter>
+                  )}
                 </Card>
               </Link>
             ))}

@@ -11,9 +11,7 @@ import {
   List,
   ListItem,
   Link,
-  SimpleGrid,
   Text,
-  useColorModeValue,
 } from "@chakra-ui/react";
 import { ExternalLinkIcon } from "@chakra-ui/icons";
 import NextLink from "next/link";

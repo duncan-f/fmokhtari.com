@@ -13,7 +13,6 @@ import {
   Link,
   List,
   ListItem,
-  SimpleGrid,
   Text,
 } from "@chakra-ui/react";
 import { ExternalLinkIcon } from "@chakra-ui/icons";
