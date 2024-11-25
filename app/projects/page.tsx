@@ -54,7 +54,7 @@ export default function Projects() {
                       <Badge key={idx}>{tech}</Badge>
                     ))}
                   </Box>
-                  <Divider mt={4} />
+                  <Divider mt={2} />
                   <CardBody my={2}>
                     <Image
                       src={project.image}
@@ -66,11 +66,6 @@ export default function Projects() {
                     />
                     <Text>{project.description}</Text>
                   </CardBody>
-                  {project.purchasable && (
-                    <CardFooter className="flex items-center justify-end">
-                      <Button colorScheme="teal">Buy {project.amount}$</Button>
-                    </CardFooter>
-                  )}
                 </Card>
               </Link>
             ))}
@@ -104,7 +99,7 @@ export default function Projects() {
                       <Badge key={idx}>{tech}</Badge>
                     ))}
                   </Box>
-                  <Divider mt={4} />
+                  <Divider mt={2} />
                   <CardBody my={2}>
                     <Image
                       src={collab.image}
@@ -116,11 +111,6 @@ export default function Projects() {
                     />
                     <Text>{collab.description}</Text>
                   </CardBody>
-                  {collab.purchasable && (
-                    <CardFooter className="flex items-center justify-end">
-                      <Button colorScheme="teal">Buy {collab.amount}$</Button>
-                    </CardFooter>
-                  )}
                 </Card>
               </Link>
             ))}

@@ -14,9 +14,9 @@ import {
   Link,
   Text,
 } from "@chakra-ui/react";
-import { ChevronRightIcon, EmailIcon } from "@chakra-ui/icons";
+import { ChevronRightIcon } from "@chakra-ui/icons";
 import { SiBuymeacoffee } from "react-icons/si";
-import { FaTwitter, FaGithub, FaYoutube } from "react-icons/fa";
+import { FaTwitter, FaGithub } from "react-icons/fa";
 import { siteData, techsList } from "@/lib/config";
 import Main from "@/layouts/main";
 import Article from "@/layouts/article";
@@ -33,7 +33,7 @@ export default function Home() {
               <Heading as="h2" variant="page-title">
                 Hi, I&apos;m Farouk Mokhtari
               </Heading>
-              <p>Engineer / Web Developer / Bug Hunter</p>
+              <p>Engineer / Bug Bounty Hunter / Web Developer</p>
             </Box>
             <Box
               flexShrink={0}
@@ -64,9 +64,10 @@ export default function Home() {
               About Me
             </Heading>
             <Paragraph>
-              I&apos;m an engineer and an indie web developer passionate about
-              Cyber Security, Ethical Hacking and CTFs. I like solving
-              challenges on Hack The Box and Try Hack Me .
+              I&apos;m an engineer with a strong focus on cybersecurity and
+              ethical hacking. I enjoy solving challenges on platforms like Hack
+              The Box and Try Hack Me to sharpen my skills. Additionally, I have
+              experience as an independent web developer.
             </Paragraph>
             <Box textAlign="center" my={8}>
               <Link as={NextLink} href="/projects">
@@ -81,12 +82,12 @@ export default function Home() {
             <Heading as="h3" variant="section-title">
               Technologies I use
             </Heading>
-            <SimpleGrid columns={[2, 3, 4]} gap={2} my={2}>
+            <SimpleGrid columns={[2, 3, 4]} gap={2} py={2} my={2}>
               {techsList.map((tech, idx) => (
                 <Flex
                   flexDirection="column"
                   alignItems="center"
-                  gap={{ base: 3, md: 2 }}
+                  gap={{ base: 5, md: 3 }}
                   key={idx}
                 >
                   <Image
@@ -96,7 +97,9 @@ export default function Home() {
                     width={48}
                     height={48}
                   />
-                  <Text fontSize="sm">{tech.name}</Text>
+                  <Text mb={2} fontSize="sm">
+                    {tech.name}
+                  </Text>
                 </Flex>
               ))}
             </SimpleGrid>
