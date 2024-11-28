@@ -3,7 +3,6 @@
 import {
   Box,
   Badge,
-  Button,
   Card,
   CardBody,
   CardHeader,
@@ -37,7 +36,12 @@ export default function Projects() {
           <SimpleGrid columns={[1, 2, 2]} gap={4}>
             {Object.keys(projectsList).map(
               (projects: string, index: number) => (
-                <Link key={index} href={projectsList[projects].href}>
+                <Link
+                  key={index}
+                  href={
+                    projectsList[projects as keyof typeof projectsList].href
+                  }
+                >
                   <Card
                     variant="unstyled"
                     overflow="hidden"
@@ -48,34 +52,52 @@ export default function Projects() {
                   >
                     <CardHeader mb={2}>
                       <Heading size="md" textAlign="center">
-                        {projectsList[projects].title}
+                        {
+                          projectsList[projects as keyof typeof projectsList]
+                            .title
+                        }
                       </Heading>
                     </CardHeader>
                     <Box display="inline-flex" mt={2} gap={1}>
-                      {projectsList[projects].techs.map(
-                        (tech: string, idx: number) => (
-                          <Badge key={idx}>{tech}</Badge>
-                        ),
-                      )}
+                      {projectsList[
+                        projects as keyof typeof projectsList
+                      ].techs.map((tech: string, idx: number) => (
+                        <Badge key={idx}>{tech}</Badge>
+                      ))}
                     </Box>
                     <Divider mt={2} />
                     <CardBody my={2}>
                       <Image
-                        src={projectsList[projects].image}
-                        alt={projectsList[projects].title}
+                        src={
+                          projectsList[projects as keyof typeof projectsList]
+                            .image
+                        }
+                        alt={
+                          projectsList[projects as keyof typeof projectsList]
+                            .title
+                        }
                         borderRadius="lg"
                         width={{ base: "full", md: 240 }}
                         height={{ base: "full", md: 150 }}
                         mb={2}
                       />
-                      <Text>{projectsList[projects].description}</Text>
+                      <Text>
+                        {
+                          projectsList[projects as keyof typeof projectsList]
+                            .description
+                        }
+                      </Text>
                     </CardBody>
-                    {projectsList[projects].purchasable && (
+                    {projectsList[projects as keyof typeof projectsList]
+                      .purchasable && (
                       <CardFooter>
-                        <BuyButton
-                          productId={projectsList[projects].productId}
-                          price={projectsList[projects].amount}
-                        />
+                        <Text as="b" color="teal.200">
+                          Buy now!! - $
+                          {
+                            projectsList[projects as keyof typeof projectsList]
+                              .amount
+                          }
+                        </Text>
                       </CardFooter>
                     )}
                   </Card>
