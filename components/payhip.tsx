@@ -19,7 +19,7 @@ export const BuyButton = ({ productId, price }: IProduct) => {
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
 
-    global.Payhip.Checkout.open({ product: productId });
+    (global as any).Payhip.Checkout.open({ product: productId });
   };
 
   return (
