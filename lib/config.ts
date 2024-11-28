@@ -3,6 +3,7 @@ export const siteData = {
   description: "This is my personal website. I use it as my portfolio",
   author: "Farouk Mokhtari",
   brand: "Farouk",
+  paymentUrl: "https://payhip.com/b/",
 };
 
 export const menuList = [
@@ -34,8 +35,8 @@ export const writeupsList = [
   },
 ];
 
-export const projectsList = [
-  {
+export const projectsList = {
+  blog: {
     title: "Blog",
     description:
       "This is my blog, it is powered by Astro. It's where I share my knowledge in technology and cyber security.",
@@ -44,8 +45,11 @@ export const projectsList = [
     url: "https://duncan-f.github.io/",
     techs: ["Astro", "React"],
     published: 2022,
+    purchasable: false,
+    amount: 0,
+    productId: "",
   },
-  {
+  "chatgpt-telegram-bot": {
     title: "ChatGPT Telegram Bot",
     description:
       "This project combines openai from ChatGPT with the Telegram API. It's a very helpful assistant.",
@@ -54,8 +58,11 @@ export const projectsList = [
     url: "https://t.me/MacLeodClanBot",
     techs: ["python"],
     published: 2023,
+    purchasable: true,
+    amount: 50,
+    productId: "PAWIv",
   },
-];
+};
 
 export const colabList = [
   {
@@ -67,6 +74,9 @@ export const colabList = [
     url: "https://sboulila.netlify.app/",
     techs: ["Astro", "React"],
     published: 2023,
+    purchasable: false,
+    amount: 0,
+    productId: "",
   },
 ];
 

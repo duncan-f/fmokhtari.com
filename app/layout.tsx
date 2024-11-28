@@ -4,6 +4,7 @@ import { Inter } from "next/font/google";
 import theme from "@/lib/theme";
 import { siteData } from "@/lib/config";
 import { Providers } from "@/components/providers";
+import Payhip from "@/components/payhip";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -28,6 +29,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <ColorModeScript initialColorMode={theme.config.initialColorMode} />
         <Providers>{children}</Providers>
+        <Payhip />
       </body>
     </html>
   );

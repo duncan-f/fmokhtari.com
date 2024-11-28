@@ -1,6 +1,6 @@
 "use client";
 
-import React, { ReactNode, useEffect } from "react";
+import React from "react";
 import { usePathname } from "next/navigation";
 import { Box, Container } from "@chakra-ui/react";
 import Navbar from "@/components/navbar";

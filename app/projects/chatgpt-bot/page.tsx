@@ -2,6 +2,7 @@
 
 import {
   Badge,
+  Box,
   Breadcrumb,
   BreadcrumbItem,
   BreadcrumbLink,
@@ -20,8 +21,11 @@ import NextLink from "next/link";
 import Article from "@/layouts/article";
 import Section from "@/components/section";
 import Paragraph from "@/components/paragraph";
+import { projectsList } from "@/lib/config";
+import { BuyButton } from "@/components/payhip";
 
 export default function ChatGptBot() {
+  const chatgpt = projectsList["chatgpt-telegram-bot"];
   return (
     <Article>
       <Container>
@@ -47,22 +51,29 @@ export default function ChatGptBot() {
         </Section>
         <Section delay={0.2}>
           <Paragraph>
-            Introducing my incredible ChatGPT bot, coded in Python using the
-            powerful packages <Text as="b">python-telegram-bot</Text> and{" "}
-            <Text as="b">OpenAI</Text>. With this bot, You can generate text and
-            images, and even answer voice messages. It&apos;s designed to
-            provide an exceptional conversational experience, going beyond just
-            text-based interactions.
+            This ChatGPT Telegram bot, developed in <Text as="b">Python</Text>,
+            leverages the <Text as="b">python-telegram-bot</Text> package to
+            interact with users on Telegram and the <Text as="b">openai</Text>{" "}
+            package to access OpenAI&apos;s language model for generating
+            responses.
           </Paragraph>
         </Section>
         <Section delay={0.3}>
           <Paragraph>
-            I take communication to the next level by engaging in dynamic
-            conversations with users. Whether it&apos;s through text or voice
-            messages, the bot will deliver a personalized chat experience.
+            It connects to a <Text as="b">MySQL</Text> database to store user
+            data and conversation history, ensuring personalized interactions
+            and persistent data management. The integration of these
+            technologies allows the bot to provide intelligent, context-aware
+            responses while maintaining efficient data handling and storage
+            capabilities.
           </Paragraph>
         </Section>
         <Section delay={0.4}>
+          <Box p={2} textAlign="center">
+            <BuyButton productId={chatgpt.productId} price={50} />
+          </Box>
+        </Section>
+        <Section delay={0.5}>
           <List>
             <ListItem display="flex" alignItems="center" gap={2}>
               <Badge>Published</Badge>
@@ -81,7 +92,7 @@ export default function ChatGptBot() {
             </ListItem>
           </List>
         </Section>
-        <Section delay={0.5}>
+        <Section delay={0.6}>
           <Grid
             templateRows="repeat(2, 1fr)"
             templateColumns="repeat(3, 1fr)"

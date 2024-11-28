@@ -20,6 +20,7 @@ import Link from "next/link";
 import Article from "@/layouts/article";
 import Section from "@/components/section";
 import { colabList, projectsList } from "@/lib/config";
+import { BuyButton } from "@/components/payhip";
 
 export default function Projects() {
   const color = useColorModeValue("#f0e7db40", "#20202380");
@@ -34,41 +35,53 @@ export default function Projects() {
         </Section>
         <Section delay={0.2}>
           <SimpleGrid columns={[1, 2, 2]} gap={4}>
-            {projectsList.map((project, idx) => (
-              <Link key={idx} href={project.href}>
-                <Card
-                  variant="unstyled"
-                  overflow="hidden"
-                  textAlign={{ base: "center", md: "left" }}
-                  size="sm"
-                  bg={color}
-                  p={2}
-                >
-                  <CardHeader mb={2}>
-                    <Heading size="md" textAlign="center">
-                      {project.title}
-                    </Heading>
-                  </CardHeader>
-                  <Box display="inline-flex" mt={2} gap={1}>
-                    {project.techs.map((tech, idx) => (
-                      <Badge key={idx}>{tech}</Badge>
-                    ))}
-                  </Box>
-                  <Divider mt={2} />
-                  <CardBody my={2}>
-                    <Image
-                      src={project.image}
-                      alt={project.title}
-                      borderRadius="lg"
-                      width={{ base: "full", md: 240 }}
-                      height={{ base: "full", md: 150 }}
-                      mb={2}
-                    />
-                    <Text>{project.description}</Text>
-                  </CardBody>
-                </Card>
-              </Link>
-            ))}
+            {Object.keys(projectsList).map(
+              (projects: string, index: number) => (
+                <Link key={index} href={projectsList[projects].href}>
+                  <Card
+                    variant="unstyled"
+                    overflow="hidden"
+                    textAlign={{ base: "center", md: "left" }}
+                    size="sm"
+                    bg={color}
+                    p={2}
+                  >
+                    <CardHeader mb={2}>
+                      <Heading size="md" textAlign="center">
+                        {projectsList[projects].title}
+                      </Heading>
+                    </CardHeader>
+                    <Box display="inline-flex" mt={2} gap={1}>
+                      {projectsList[projects].techs.map(
+                        (tech: string, idx: number) => (
+                          <Badge key={idx}>{tech}</Badge>
+                        ),
+                      )}
+                    </Box>
+                    <Divider mt={2} />
+                    <CardBody my={2}>
+                      <Image
+                        src={projectsList[projects].image}
+                        alt={projectsList[projects].title}
+                        borderRadius="lg"
+                        width={{ base: "full", md: 240 }}
+                        height={{ base: "full", md: 150 }}
+                        mb={2}
+                      />
+                      <Text>{projectsList[projects].description}</Text>
+                    </CardBody>
+                    {projectsList[projects].purchasable && (
+                      <CardFooter>
+                        <BuyButton
+                          productId={projectsList[projects].productId}
+                          price={projectsList[projects].amount}
+                        />
+                      </CardFooter>
+                    )}
+                  </Card>
+                </Link>
+              ),
+            )}
           </SimpleGrid>
         </Section>
         <Section delay={0.3}>
