@@ -26,10 +26,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <Payhip />
       <body className={inter.className}>
         <ColorModeScript initialColorMode={theme.config.initialColorMode} />
         <Providers>{children}</Providers>
-        <Payhip />
       </body>
     </html>
   );

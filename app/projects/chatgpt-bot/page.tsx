@@ -21,7 +21,7 @@ import NextLink from "next/link";
 import Article from "@/layouts/article";
 import Section from "@/components/section";
 import Paragraph from "@/components/paragraph";
-import { projectsList } from "@/lib/config";
+import { projectsList, siteData } from "@/lib/config";
 import { BuyButton } from "@/components/payhip";
 
 export default function ChatGptBot() {
@@ -69,7 +69,20 @@ export default function ChatGptBot() {
           </Paragraph>
         </Section>
         <Section delay={0.4}>
-          <Box p={2} textAlign="center">
+          <Box
+            p={2}
+            display="flex"
+            flexDirection={{ base: "column", md: "row" }}
+            alignItems="center"
+            justifyContent="center"
+            gap={{ base: 5, md: 10 }}
+          >
+            <Link
+              as={NextLink}
+              href={`${siteData.paymentUrl}${chatgpt.productId}`}
+            >
+              View product page
+            </Link>
             <BuyButton productId={chatgpt.productId} price={50} />
           </Box>
         </Section>
