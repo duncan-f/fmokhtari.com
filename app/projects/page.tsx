@@ -33,91 +33,63 @@ export default function Projects() {
         </Section>
         <Section delay={0.2}>
           <SimpleGrid columns={[1, 2, 2]} gap={4} marginTop={8}>
-            {Object.keys(projectsList).map(
-              (projects: string, index: number) => (
-                <Link
-                  key={index}
-                  href={
-                    projectsList[projects as keyof typeof projectsList].href
-                  }
+            {Object.values(projectsList).map((projects, index: number) => (
+              <Link key={index} href={projects.href}>
+                <Card
+                  variant="unstyled"
+                  overflow="hidden"
+                  textAlign={{ base: "center", md: "left" }}
+                  size="sm"
+                  bg={color}
+                  p={2}
                 >
-                  <Card
-                    variant="unstyled"
-                    overflow="hidden"
-                    textAlign={{ base: "center", md: "left" }}
-                    size="sm"
-                    bg={color}
-                    p={2}
+                  <CardHeader mb={2}>
+                    <Heading size="md" textAlign="center">
+                      {projects.title}
+                    </Heading>
+                  </CardHeader>
+                  <Box
+                    display="inline-flex"
+                    alignItems="center"
+                    justifyContent="center"
+                    mt={2}
+                    gap={1}
                   >
-                    <CardHeader mb={2}>
-                      <Heading size="md" textAlign="center">
-                        {
-                          projectsList[projects as keyof typeof projectsList]
-                            .title
-                        }
-                      </Heading>
-                    </CardHeader>
-                    <Box
-                      display="inline-flex"
+                    {projects.techs.map((tech: string, idx: number) => (
+                      <Badge key={idx}>{tech}</Badge>
+                    ))}
+                  </Box>
+                  <Divider mt={2} />
+                  <CardBody
+                    my={2}
+                    display="flex"
+                    flexDirection="column"
+                    alignItems="center"
+                  >
+                    <Image
+                      src={projects.image}
+                      alt={projects.title}
+                      borderRadius="lg"
+                      width={{ base: "full", md: 240 }}
+                      height={{ base: "full", md: 150 }}
+                      mb={2}
+                    />
+                    <Text textAlign="center">{projects.description}</Text>
+                  </CardBody>
+                  {projects.purchasable && (
+                    <CardFooter
+                      display="center"
                       alignItems="center"
                       justifyContent="center"
-                      mt={2}
-                      gap={1}
                     >
-                      {projectsList[
-                        projects as keyof typeof projectsList
-                      ].techs.map((tech: string, idx: number) => (
-                        <Badge key={idx}>{tech}</Badge>
-                      ))}
-                    </Box>
-                    <Divider mt={2} />
-                    <CardBody
-                      my={2}
-                      display="flex"
-                      flexDirection="column"
-                      alignItems="center"
-                    >
-                      <Image
-                        src={
-                          projectsList[projects as keyof typeof projectsList]
-                            .image
-                        }
-                        alt={
-                          projectsList[projects as keyof typeof projectsList]
-                            .title
-                        }
-                        borderRadius="lg"
-                        width={{ base: "full", md: 240 }}
-                        height={{ base: "full", md: 150 }}
-                        mb={2}
-                      />
-                      <Text textAlign="center">
-                        {
-                          projectsList[projects as keyof typeof projectsList]
-                            .description
-                        }
+                      <Text as="b" color="teal.200">
+                        Buy now!! - ${projects.amount}
                       </Text>
-                    </CardBody>
-                    {projectsList[projects as keyof typeof projectsList]
-                      .purchasable && (
-                      <CardFooter
-                        display="center"
-                        alignItems="center"
-                        justifyContent="center"
-                      >
-                        <Text as="b" color="teal.200">
-                          Buy now!! - $
-                          {
-                            projectsList[projects as keyof typeof projectsList]
-                              .amount
-                          }
-                        </Text>
-                      </CardFooter>
-                    )}
-                  </Card>
-                </Link>
-              ),
-            )}
+                    </CardFooter>
+                  )}
+                </Card>
+              </Link>
+            ))}
           </SimpleGrid>
         </Section>
         <Divider mb={5} />

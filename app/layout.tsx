@@ -12,6 +12,8 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://mokhtari.netlify.app"),
   title: { template: "%s - " + siteData.title, default: siteData.title },
   description: siteData.description,
+  creator: siteData.author,
+  authors: [{ url: "https://mokhtari.netlify.app", name: siteData.author }],
   openGraph: {
     title: siteData.title,
     description: siteData.description,
