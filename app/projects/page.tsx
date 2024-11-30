@@ -19,7 +19,6 @@ import Link from "next/link";
 import Article from "@/layouts/article";
 import Section from "@/components/section";
 import { colabList, projectsList } from "@/lib/config";
-import { BuyButton } from "@/components/payhip";
 
 export default function Projects() {
   const color = useColorModeValue("#f0e7db40", "#20202380");
@@ -28,12 +27,12 @@ export default function Projects() {
     <Article>
       <Container>
         <Section delay={0.1}>
-          <Heading as="h3" fontSize={20}>
+          <Heading as="h3" fontSize={28} variant="section-title">
             Projects
           </Heading>
         </Section>
         <Section delay={0.2}>
-          <SimpleGrid columns={[1, 2, 2]} gap={4}>
+          <SimpleGrid columns={[1, 2, 2]} gap={4} marginTop={8}>
             {Object.keys(projectsList).map(
               (projects: string, index: number) => (
                 <Link
@@ -58,7 +57,13 @@ export default function Projects() {
                         }
                       </Heading>
                     </CardHeader>
-                    <Box display="inline-flex" mt={2} gap={1}>
+                    <Box
+                      display="inline-flex"
+                      alignItems="center"
+                      justifyContent="center"
+                      mt={2}
+                      gap={1}
+                    >
                       {projectsList[
                         projects as keyof typeof projectsList
                       ].techs.map((tech: string, idx: number) => (
@@ -66,7 +71,12 @@ export default function Projects() {
                       ))}
                     </Box>
                     <Divider mt={2} />
-                    <CardBody my={2}>
+                    <CardBody
+                      my={2}
+                      display="flex"
+                      flexDirection="column"
+                      alignItems="center"
+                    >
                       <Image
                         src={
                           projectsList[projects as keyof typeof projectsList]
@@ -81,7 +91,7 @@ export default function Projects() {
                         height={{ base: "full", md: 150 }}
                         mb={2}
                       />
-                      <Text>
+                      <Text textAlign="center">
                         {
                           projectsList[projects as keyof typeof projectsList]
                             .description
@@ -90,7 +100,11 @@ export default function Projects() {
                     </CardBody>
                     {projectsList[projects as keyof typeof projectsList]
                       .purchasable && (
-                      <CardFooter>
+                      <CardFooter
+                        display="center"
+                        alignItems="center"
+                        justifyContent="center"
+                      >
                         <Text as="b" color="teal.200">
                           Buy now!! - $
                           {
@@ -106,9 +120,9 @@ export default function Projects() {
             )}
           </SimpleGrid>
         </Section>
+        <Divider mb={5} />
         <Section delay={0.3}>
-          <Divider mb={5} />
-          <Heading as="h3" fontSize={20}>
+          <Heading as="h3" fontSize={28} variant="section-title">
             Collaborations
           </Heading>
         </Section>

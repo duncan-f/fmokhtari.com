@@ -81,7 +81,7 @@ export default function ChatGptBot() {
               as={NextLink}
               href={`${siteData.paymentUrl}${chatgpt.productId}`}
             >
-              View product page
+              View more...
             </Link>
             <BuyButton productId={chatgpt.productId} price={50} />
           </Box>

@@ -1,9 +1,6 @@
 "use client";
 
 import {
-  Box,
-  Badge,
-  Button,
   Card,
   CardBody,
   CardHeader,
@@ -27,12 +24,12 @@ export default function Writeups() {
     <Article>
       <Container>
         <Section delay={0.1}>
-          <Heading as="h3" fontSize={20}>
+          <Heading as="h3" fontSize={28} variant="section-title">
             Writeups
           </Heading>
         </Section>
         <Section delay={0.2}>
-          <SimpleGrid columns={[1, 2, 2]} gap={4}>
+          <SimpleGrid columns={[1, 2, 2]} gap={4} marginTop={8}>
             {writeupsList.map((write, idx) => (
               <Link key={idx} href={write.href} target="_blank">
                 <Card
@@ -58,7 +55,7 @@ export default function Writeups() {
                       borderRadius="lg"
                       mb={2}
                     />
-                    <Text>{write.description}</Text>
+                    <Text textAlign="center">{write.description}</Text>
                   </CardBody>
                 </Card>
               </Link>
