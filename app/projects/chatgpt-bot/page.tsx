@@ -78,7 +78,7 @@ export default function ChatGptBot() {
             gap={{ base: 5, md: 10 }}
           >
             <Link
-              as={NextLink}
+              target="_blank"
               href={`${siteData.paymentUrl}${chatgpt.productId}`}
             >
               View more...
@@ -94,7 +94,12 @@ export default function ChatGptBot() {
             </ListItem>
             <ListItem display="flex" alignItems="center" gap={2}>
               <Badge>Website</Badge>
-              <Link href="https://t.me/MacLeodClanBot" target="_blank">
+              <Link
+                href="https://t.me/MacLeodClanBot"
+                target="_blank"
+                display="flex"
+                alignItems="center"
+              >
                 @MacLeodClanBot
                 <ExternalLinkIcon ml={1} />
               </Link>

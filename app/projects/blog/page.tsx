@@ -77,7 +77,12 @@ export default function Blog() {
             </ListItem>
             <ListItem display="flex" alignItems="center" gap={2}>
               <Badge>Website</Badge>
-              <Link href="https://duncan-f.github.io/" target="_blank">
+              <Link
+                display="flex"
+                alignItems="center"
+                href="https://duncan-f.github.io/"
+                target="_blank"
+              >
                 https://duncan-f.github.io/
                 <ExternalLinkIcon ml={1} />
               </Link>

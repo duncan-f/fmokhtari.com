@@ -69,7 +69,7 @@ export default function Geoserices() {
               <Link
                 href="https://sboulila.netlify.app/"
                 target="_blank"
-                display="inline-flex"
+                display="flex"
                 alignItems="center"
               >
                 https://sboulila.netlify.app/
