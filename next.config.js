@@ -8,6 +8,18 @@ const nextConfig = {
       },
     ];
   },
+  reactStrictMode: true,
+  swcMinify: true,
+  experimental: {
+    serverActions: {
+      allowedOrigins: [
+        "payhip.com",
+        "*.payhip.com",
+        "paypal.com",
+        "*.paypal.com",
+      ],
+    },
+  },
 };
 
 module.exports = nextConfig;

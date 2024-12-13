@@ -19,7 +19,6 @@ export const BuyButton = ({ productId, price }: IProduct) => {
   const handleClick = () => {
     (global as any).Payhip.Checkout.open({
       product: productId,
-      method: "window",
     });
   };
 

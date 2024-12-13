@@ -1,3 +1,5 @@
+"use client";
+
 import { motion } from "framer-motion";
 import {
   Box,
@@ -39,7 +41,6 @@ const LinkItem = ({
   const active = path === href;
 
   const inactiveColor = useColorModeValue("gray.800", "whiteAlpha.900");
-  // const activeColor = useColorModeValue("gray.700", "#fff");
   const bgColor = useColorModeValue("#805ad5", "#a0aec040");
 
   return (
