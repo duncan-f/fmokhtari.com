@@ -28,35 +28,11 @@ export default function Home() {
     <Main>
       <Article>
         <Container>
-          <Box display={{ md: "flex" }} alignItems="center" mb={10}>
-            <Box flexGrow={1} textAlign={{ base: "center", md: "left" }}>
-              <Heading as="h2" variant="page-title">
-                Hi, I&apos;m Farouk Mokhtari
-              </Heading>
-              <p>Engineer / Bug Bounty Hunter / Web Developer</p>
-            </Box>
-            <Box
-              flexShrink={0}
-              mt={{ base: 4, md: 0 }}
-              ml={{ md: 6 }}
-              textAlign="center"
-            >
-              <Box
-                borderColor="whiteAlpha.800"
-                borderWidth={2}
-                borderStyle="solid"
-                display="inline-block"
-                borderRadius={{ base: "lg", md: "full" }}
-                overflow="hidden"
-              >
-                <Image
-                  src="/images/duncan.png"
-                  alt={siteData.author}
-                  width={120}
-                  height={120}
-                />
-              </Box>
-            </Box>
+          <Box flexGrow={1} textAlign="center" mb={10}>
+            <Heading as="h2" variant="page-title">
+              Hi, I&apos;m Farouk Mokhtari
+            </Heading>
+            <p>Engineer / Bug Bounty Hunter / Web Developer</p>
           </Box>
 
           <Section delay={0.2}>
