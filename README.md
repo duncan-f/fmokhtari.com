@@ -18,7 +18,7 @@ Link: [mokhtari.netlify.app](https://mokhtari.netlify.app)
 # Technologies involved
 
 - [React](https://react.dev/)
-- [Next JS](https://nextjs.org/)
+- [Next.JS](https://nextjs.org/)
 - [Chakra UI](https://v2.chakra-ui.com/)
 - [Typescript](https://www.typescriptlang.org/)
 - [Framer Motion](https://www.npmjs.com/package/framer-motion)

@@ -17,7 +17,7 @@ import {
 import { ChevronRightIcon } from "@chakra-ui/icons";
 import { SiBuymeacoffee } from "react-icons/si";
 import { FaTwitter, FaGithub } from "react-icons/fa";
-import { siteData, techsList } from "@/lib/config";
+import { techsList } from "@/lib/config";
 import Main from "@/layouts/main";
 import Article from "@/layouts/article";
 import Section from "@/components/section";
@@ -85,7 +85,7 @@ export default function Home() {
             <Heading as="h3" variant="section-title">
               I speak
             </Heading>
-            <Text>Berberian, English, French, Arabic, Russian</Text>
+            <Text>Amazigh, English, French, Arabic, Russian</Text>
           </Section>
 
           <Section delay={0.5}>
